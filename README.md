@@ -5,10 +5,11 @@
 [![Dataset](https://img.shields.io/badge/dataset-Ropedia%20%2F%20Xperience--10M-008b9a)](https://github.com/Ropedia)
 [![Scope](https://img.shields.io/badge/scope-single%20public%20sample-b65b04)](#scope)
 
-A compact, reproducible embodied-AI learning repo built around one public
-Ropedia / Xperience-10M sample episode.
+An audit-first embodied-AI learning repo built around one public Ropedia /
+Xperience-10M sample episode.
 
-This project turns a raw multimodal episode into:
+The project does one narrow thing carefully: it turns a raw multimodal episode
+into:
 
 - all-modality sliding-window features,
 - motion-only and all-modality baseline models,
@@ -16,13 +17,21 @@ This project turns a raw multimodal episode into:
 - metrics, predictions, model weights, manifests, charts, and a static website,
 - a clear explanation of what a single episode can and cannot prove.
 
-Open the polished dashboard:
+Start with the visual dashboard:
 
 **https://chaoyue0307.github.io/ropedia-episode-task-suite/**
 
 Hugging Face Space app:
 
 **https://cy0307-ropedia-episode-task-suite.static.hf.space/**
+
+## Read This Project In Three Layers
+
+| Layer | What to inspect | Why it matters |
+| --- | --- | --- |
+| Data contract | `windows.csv`, `feature_manifest.json`, modality manifests | Confirms what each sample window contains before modeling |
+| Minimal heads | softmax, ridge projection/regression, multi-label logistic heads | Keeps every input/output contract visible and debuggable |
+| Evidence | metrics, predictions, confusion matrices, diagrams, dashboard | Makes the single-episode claims reviewable without rerunning first |
 
 ## Links
 
