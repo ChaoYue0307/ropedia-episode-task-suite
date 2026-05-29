@@ -1,0 +1,19 @@
+{
+  "accuracy": 0.46120689655172414,
+  "precision": 0.4720496894409938,
+  "recall": 0.6551724137931034,
+  "f1": 0.5487364620938628,
+  "tp": 228,
+  "tn": 93,
+  "fp": 255,
+  "fn": 120,
+  "positive_rate_true": 0.5,
+  "positive_rate_pred": 0.6939655172413793,
+  "task": "temporal_order",
+  "input": "two adjacent windows -> whether order is correct",
+  "split": "chronological",
+  "num_samples": 2320,
+  "num_train_samples": 1624,
+  "num_test_samples": 696,
+  "train_final_accuracy": 0.5104679802955665
+}

@@ -1,0 +1,24 @@
+{
+  "accuracy": 0.034482758620689655,
+  "balanced_accuracy": 0.04,
+  "macro_f1": 0.05925925925925927,
+  "weighted_f1": 0.05108556832694764,
+  "num_eval_windows": 348,
+  "num_classes": 18,
+  "task": "next_action",
+  "input": "all modalities at t -> action at t+20 frames",
+  "split": "chronological",
+  "num_windows": 1161,
+  "num_train_windows": 813,
+  "num_test_windows": 348,
+  "feature_dim": 8378,
+  "majority_baseline_accuracy": 0.0,
+  "train_final_accuracy": 1.0,
+  "train_final_loss": 0.017629079520702362,
+  "unseen_test_classes": [
+    "Place item on table",
+    "Pour coffee",
+    "Pour milk into coffee",
+    "Wait/Prepare for pouring"
+  ]
+}

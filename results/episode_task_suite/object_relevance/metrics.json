@@ -1,0 +1,14 @@
+{
+  "micro_f1": 0.18393030009680542,
+  "macro_f1": 0.06427052187996415,
+  "exact_match": 0.005747126436781609,
+  "precision": 0.16360505166475317,
+  "recall": 0.21002210759027265,
+  "task": "object_relevance",
+  "input": "all non-caption modalities -> current relevant object set",
+  "split": "chronological",
+  "num_windows": 1161,
+  "num_train_windows": 813,
+  "num_test_windows": 348,
+  "num_objects": 34
+}
