@@ -1,0 +1,15 @@
+{
+  "mrr": 0.017183946083791223,
+  "median_rank": 167.0,
+  "mean_rank": 174.39367816091954,
+  "num_queries": 348,
+  "top1_accuracy": 0.0028735632183908046,
+  "top5_accuracy": 0.011494252873563218,
+  "top10_accuracy": 0.017241379310344827,
+  "task": "caption_grounding",
+  "input": "caption objects/interaction text query + candidate sensor windows",
+  "output": "matching time window",
+  "split": "chronological",
+  "num_train_windows": 813,
+  "num_test_windows": 348
+}
