@@ -1,0 +1,15 @@
+{
+  "mse": 11.323140144348145,
+  "mae": 0.40246668457984924,
+  "r2": -1334.788993815828,
+  "task": "hand_trajectory_forecast",
+  "input": "all modalities at t -> future left/right hand 3D joints",
+  "split": "chronological",
+  "num_windows": 1159,
+  "num_train_windows": 811,
+  "num_test_windows": 348,
+  "forecast_frames": 10,
+  "mpjpe": 0.8222644925117493,
+  "final_frame_mpjpe": 1.0649521350860596,
+  "target_dim": 1260
+}
