@@ -1,0 +1,89 @@
+{
+  "annotation": "/Users/chaoyue/Library/CloudStorage/Dropbox/Ropedia/data/sample/xperience-10m-sample/annotation.hdf5",
+  "target": "subtask",
+  "window_frames": 20,
+  "stride_frames": 5,
+  "min_label_fraction": 0.6,
+  "test_fraction": 0.25,
+  "epochs": 800,
+  "learning_rate": 0.12,
+  "l2": 0.002,
+  "class_weights": true,
+  "num_windows": 1147,
+  "num_features": 8378,
+  "num_train_windows": 857,
+  "num_test_windows": 290,
+  "classes": [
+    "Pick up and position kettle",
+    "Position kettle to pour",
+    "Move kettle",
+    "Prepare coffee equipment and scoop grounds",
+    "Transfer coffee grounds to dripper",
+    "Secure coffee container",
+    "Handle gooseneck kettle",
+    "Lift gooseneck kettle",
+    "Set down kettle and retrieve white bottle",
+    "Pour and close white bottle",
+    "Move bottle to coffee equipment",
+    "Prepare for pouring",
+    "Pour coffee",
+    "Pour milk into coffee"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 3.1486525535583496,
+      "train_accuracy": 0.042007001166861145
+    },
+    {
+      "epoch": 80,
+      "loss": 0.018915962427854538,
+      "train_accuracy": 1.0
+    },
+    {
+      "epoch": 160,
+      "loss": 0.017148690298199654,
+      "train_accuracy": 1.0
+    },
+    {
+      "epoch": 240,
+      "loss": 0.016226664185523987,
+      "train_accuracy": 1.0
+    },
+    {
+      "epoch": 320,
+      "loss": 0.015551619231700897,
+      "train_accuracy": 1.0
+    },
+    {
+      "epoch": 400,
+      "loss": 0.014988027513027191,
+      "train_accuracy": 1.0
+    },
+    {
+      "epoch": 480,
+      "loss": 0.014487986452877522,
+      "train_accuracy": 1.0
+    },
+    {
+      "epoch": 560,
+      "loss": 0.014030267484486103,
+      "train_accuracy": 1.0
+    },
+    {
+      "epoch": 640,
+      "loss": 0.01360400952398777,
+      "train_accuracy": 1.0
+    },
+    {
+      "epoch": 720,
+      "loss": 0.01320301927626133,
+      "train_accuracy": 1.0
+    },
+    {
+      "epoch": 800,
+      "loss": 0.012823422439396381,
+      "train_accuracy": 1.0
+    }
+  ]
+}
