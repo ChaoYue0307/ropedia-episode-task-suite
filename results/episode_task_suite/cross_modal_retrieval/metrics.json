@@ -1,0 +1,15 @@
+{
+  "mrr": 0.26335984006618296,
+  "median_rank": 12.5,
+  "mean_rank": 43.33045977011494,
+  "num_queries": 348,
+  "top1_accuracy": 0.14942528735632185,
+  "top5_accuracy": 0.3764367816091954,
+  "top10_accuracy": 0.47413793103448276,
+  "task": "cross_modal_retrieval",
+  "input": "motion/IMU/camera query",
+  "output": "matching depth/video window",
+  "split": "chronological",
+  "num_train_windows": 813,
+  "num_test_windows": 348
+}
