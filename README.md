@@ -19,6 +19,20 @@ Open the polished dashboard:
 
 **https://chaoyue0307.github.io/ropedia-episode-task-suite/**
 
+## Links
+
+| Resource | Link |
+| --- | --- |
+| This GitHub repo | https://github.com/ChaoYue0307/ropedia-episode-task-suite |
+| This project website | https://chaoyue0307.github.io/ropedia-episode-task-suite/ |
+| Ropedia website | https://ropedia.com/dataset |
+| Xperience-10M release page | https://ropedia.com/blog/20260316_xperience_10m |
+| Ropedia GitHub organization | https://github.com/Ropedia |
+| HOMIE Toolkit | https://github.com/Ropedia/HOMIE-toolkit |
+| Xperience-10M Hugging Face dataset | https://huggingface.co/datasets/ropedia-ai/xperience-10m |
+| Xperience-10M sample on Hugging Face | https://huggingface.co/datasets/ropedia-ai/xperience-10m-sample |
+| Ropedia Hugging Face organization | https://huggingface.co/ropedia-ai |
+
 ![Verified Pipeline](docs/assets/pipeline_diagram.svg)
 
 ## Scope
@@ -79,6 +93,12 @@ The public sample dataset identifier is:
 
 ```text
 ropedia-ai/xperience-10m-sample
+```
+
+Hugging Face URL:
+
+```text
+https://huggingface.co/datasets/ropedia-ai/xperience-10m-sample
 ```
 
 ## Quickstart
