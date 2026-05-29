@@ -1,0 +1,12 @@
+{
+  "mse": 1359.1639404296875,
+  "mae": 0.31084805727005005,
+  "r2": -0.016022846771134747,
+  "task": "modality_reconstruction",
+  "input": "motion/IMU/camera",
+  "output": "depth/video feature vector",
+  "split": "chronological",
+  "num_train_windows": 813,
+  "num_test_windows": 348,
+  "target_dim": 5096
+}
