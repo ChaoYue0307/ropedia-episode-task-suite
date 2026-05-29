@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+data/
+HOMIE-toolkit/
+*.rrd
+*.mp4
+*.hdf5
+*.h5
+outputs/
+feature_cache/

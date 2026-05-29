@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ropedia Episode Task Suite</title>
+  <style>
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #111827; background: #f8fafc; }
+    header { background: #0f172a; color: white; padding: 42px 56px; }
+    header h1 { margin: 0 0 8px; font-size: 34px; }
+    header p { margin: 0; color: #cbd5e1; max-width: 980px; line-height: 1.5; }
+    main { padding: 32px 56px 56px; }
+    section { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+    h2 { margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 20px; }
+    img { max-width: 100%; height: auto; border: 1px solid #e5e7eb; border-radius: 6px; background: white; }
+    table { border-collapse: collapse; width: 100%; font-size: 14px; }
+    th, td { border-bottom: 1px solid #e5e7eb; padding: 10px 8px; text-align: left; vertical-align: top; }
+    th { background: #f1f5f9; }
+    code { background: #f1f5f9; padding: 2px 5px; border-radius: 4px; }
+    .note { color: #475569; line-height: 1.55; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ropedia / Xperience-10M Episode Task Suite</h1>
+    <p>One public sample episode converted into all-modality window features, minimal baselines, task-suite metrics, and reproducible artifacts.</p>
+  </header>
+  <main>
+    <section>
+      <h2>Pipeline</h2>
+      <img src="assets/pipeline_diagram.png" alt="Pipeline diagram">
+    </section>
+    <section>
+      <h2>Model Comparison</h2>
+      <img src="assets/charts/model_macro_f1.svg" alt="Model macro F1 chart">
+      <table>
+        <thead><tr><th>Model</th><th>Accuracy</th><th>Balanced Acc.</th><th>Macro-F1</th><th>Weighted-F1</th><th>Classes</th><th>Eval Windows</th></tr></thead>
+        <tbody><tr><td>Motion-only action</td><td>0.9828</td><td>0.9644</td><td>0.9688</td><td>0.9824</td><td>18</td><td>291</td></tr>
+<tr><td>Motion-only subtask</td><td>0.9759</td><td>0.9784</td><td>0.9528</td><td>0.9779</td><td>14</td><td>290</td></tr>
+<tr><td>All-modality action</td><td>0.9828</td><td>0.9801</td><td>0.9791</td><td>0.9828</td><td>18</td><td>291</td></tr>
+<tr><td>All-modality subtask</td><td>0.9828</td><td>0.9505</td><td>0.9308</td><td>0.9838</td><td>14</td><td>290</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>All-Modality Feature Vector</h2>
+      <p class="note">The all-modality window feature has 8378 dimensions across motion, video, depth, text, point cloud, and calibration features.</p>
+      <img src="assets/charts/feature_blocks.svg" alt="Feature block dimensions">
+    </section>
+    <section>
+      <h2>Episode Task Suite</h2>
+      <div class="grid">
+        <img src="assets/charts/episode_task_scores.svg" alt="Episode task scores">
+        <img src="assets/charts/cross_modal_retrieval.svg" alt="Cross-modal retrieval">
+      </div>
+      <table>
+        <thead><tr><th>Task</th><th>Input / Output</th><th>Main Score</th><th>Accuracy</th><th>Macro-F1</th><th>MRR</th><th>MPJPE</th></tr></thead>
+        <tbody><tr><td><code>timeline_action</code></td><td>all modalities -&gt; current action label</td><td>0.0500</td><td>0.0292</td><td>0.0500</td><td>n/a</td><td>n/a</td></tr>
+<tr><td><code>timeline_subtask</code></td><td>all modalities -&gt; current subtask label</td><td>0.0495</td><td>0.0581</td><td>0.0495</td><td>n/a</td><td>n/a</td></tr>
+<tr><td><code>transition_detection</code></td><td>all modalities -&gt; action boundary/steady</td><td>0.6552</td><td>0.9253</td><td>0.6552</td><td>n/a</td><td>n/a</td></tr>
+<tr><td><code>next_action</code></td><td>all modalities at t -&gt; action at t+20 frames</td><td>0.0593</td><td>0.0345</td><td>0.0593</td><td>n/a</td><td>n/a</td></tr>
+<tr><td><code>hand_trajectory_forecast</code></td><td>all modalities at t -&gt; future left/right hand 3D joints</td><td>0.8223</td><td>n/a</td><td>n/a</td><td>n/a</td><td>0.8223</td></tr>
+<tr><td><code>contact_prediction</code></td><td>all non-contact/non-caption-label modalities -&gt; any body contact</td><td>1.0000</td><td>1.0000</td><td>1.0000</td><td>n/a</td><td>n/a</td></tr>
+<tr><td><code>object_relevance</code></td><td>all non-caption modalities -&gt; current relevant object set</td><td>0.0643</td><td>n/a</td><td>0.0643</td><td>n/a</td><td>n/a</td></tr>
+<tr><td><code>caption_grounding</code></td><td>caption objects/interaction text query + candidate sensor windows</td><td>0.0115</td><td>n/a</td><td>n/a</td><td>0.0172</td><td>n/a</td></tr>
+<tr><td><code>cross_modal_retrieval</code></td><td>motion/IMU/camera query</td><td>0.3764</td><td>n/a</td><td>n/a</td><td>0.2634</td><td>n/a</td></tr>
+<tr><td><code>modality_reconstruction</code></td><td>motion/IMU/camera</td><td>-0.0160</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td><code>temporal_order</code></td><td>two adjacent windows -&gt; whether order is correct</td><td>0.5487</td><td>0.4612</td><td>n/a</td><td>n/a</td><td>n/a</td></tr>
+<tr><td><code>misalignment_detection</code></td><td>motion+visual pair -&gt; aligned vs shifted by 8 windows</td><td>0.4866</td><td>0.5029</td><td>n/a</td><td>n/a</td><td>n/a</td></tr></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Interpretation</h2>
+      <p class="note">These results are for one sample episode. They are useful for validating data loading, modality alignment, task definitions, and baseline code. They should not be treated as evidence of cross-episode generalization. The next serious step is to run the same suite over many episodes and split train/test by episode.</p>
+    </section>
+  </main>
+</body>
+</html>
