@@ -1,0 +1,291 @@
+window_index,start_frame,end_frame,true_label,predicted_label,confidence,correct,label_fraction
+209,1060,1079,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9893538951873779,1,1.0
+560,2835,2854,Lift gooseneck kettle,Lift gooseneck kettle,0.9953922033309937,1,1.0
+279,1410,1429,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9784204363822937,1,1.0
+264,1335,1354,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9872487187385559,1,1.0
+1109,5610,5629,Pour coffee,Pour coffee,0.999907374382019,1,1.0
+40,200,219,Pick up and position kettle,Pick up and position kettle,0.9986844658851624,1,1.0
+1125,5690,5709,Pour coffee,Pour coffee,0.9997884631156921,1,1.0
+753,3815,3834,Pour and close white bottle,Pour and close white bottle,0.9736549258232117,1,1.0
+422,2140,2159,Handle gooseneck kettle,Handle gooseneck kettle,0.9998724460601807,1,1.0
+784,3970,3989,Pour and close white bottle,Pour and close white bottle,0.9681761264801025,1,1.0
+989,5010,5029,Pour coffee,Pour coffee,0.9867190718650818,1,1.0
+12,60,79,Pick up and position kettle,Pick up and position kettle,0.939836859703064,1,1.0
+310,1570,1589,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.997778594493866,1,1.0
+116,580,599,Pick up and position kettle,Pick up and position kettle,0.9871314167976379,1,1.0
+882,4470,4489,Prepare for pouring,Prepare for pouring,0.9766071438789368,1,1.0
+146,730,749,Pick up and position kettle,Pick up and position kettle,0.9958223104476929,1,1.0
+855,4325,4344,Pour and close white bottle,Pour and close white bottle,0.8725869655609131,1,1.0
+823,4165,4184,Pour and close white bottle,Pour and close white bottle,0.9982062578201294,1,1.0
+1116,5645,5664,Pour coffee,Pour coffee,0.9999724626541138,1,1.0
+571,2890,2909,Lift gooseneck kettle,Lift gooseneck kettle,0.9852343201637268,1,1.0
+627,3170,3189,Lift gooseneck kettle,Lift gooseneck kettle,0.9909413456916809,1,1.0
+121,605,624,Pick up and position kettle,Pick up and position kettle,0.9911578297615051,1,1.0
+404,2050,2069,Handle gooseneck kettle,Handle gooseneck kettle,0.9974282383918762,1,1.0
+626,3165,3184,Lift gooseneck kettle,Lift gooseneck kettle,0.9944151639938354,1,1.0
+212,1075,1094,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9941052198410034,1,1.0
+276,1395,1414,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9919337034225464,1,1.0
+764,3870,3889,Pour and close white bottle,Pour and close white bottle,0.9776648879051208,1,1.0
+45,225,244,Pick up and position kettle,Pick up and position kettle,0.9986771941184998,1,1.0
+695,3520,3539,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9995488524436951,1,1.0
+938,4750,4769,Prepare for pouring,Prepare for pouring,0.9051975011825562,1,1.0
+820,4150,4169,Pour and close white bottle,Pour and close white bottle,0.9873536825180054,1,1.0
+343,1735,1754,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.998393714427948,1,1.0
+650,3285,3304,Lift gooseneck kettle,Lift gooseneck kettle,0.9485242366790771,1,1.0
+586,2965,2984,Lift gooseneck kettle,Lift gooseneck kettle,0.9983717799186707,1,1.0
+692,3505,3524,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.8527786731719971,1,1.0
+100,500,519,Pick up and position kettle,Pick up and position kettle,0.9985817670822144,1,1.0
+41,205,224,Pick up and position kettle,Pick up and position kettle,0.9985299110412598,1,1.0
+20,100,119,Pick up and position kettle,Pick up and position kettle,0.9734482765197754,1,1.0
+447,2265,2284,Handle gooseneck kettle,Handle gooseneck kettle,0.9923112988471985,1,1.0
+313,1585,1604,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9986016154289246,1,1.0
+676,3425,3444,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9196125268936157,1,1.0
+774,3920,3939,Pour and close white bottle,Pour and close white bottle,0.9813734889030457,1,1.0
+128,640,659,Pick up and position kettle,Pick up and position kettle,0.9608396887779236,1,1.0
+998,5055,5074,Pour coffee,Pour coffee,0.8944323062896729,1,1.0
+341,1725,1744,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9738705158233643,1,1.0
+634,3205,3224,Lift gooseneck kettle,Lift gooseneck kettle,0.9597744345664978,1,1.0
+358,1810,1829,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9652742743492126,1,1.0
+161,815,834,Move kettle,Move kettle,0.9982221722602844,1,1.0
+273,1380,1399,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9948796033859253,1,1.0
+296,1495,1514,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9816195964813232,1,1.0
+994,5035,5054,Pour coffee,Pour coffee,0.9102225303649902,1,1.0
+166,840,859,Move kettle,Move kettle,0.9993120431900024,1,1.0
+514,2600,2619,Handle gooseneck kettle,Handle gooseneck kettle,0.9831570982933044,1,1.0
+801,4055,4074,Pour and close white bottle,Pour and close white bottle,0.9999593496322632,1,1.0
+199,1010,1029,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9901695847511292,1,1.0
+861,4360,4379,Move bottle to coffee equipment,Move bottle to coffee equipment,0.9674142003059387,1,0.949999988079071
+1079,5460,5479,Pour coffee,Pour coffee,0.999990701675415,1,1.0
+504,2550,2569,Handle gooseneck kettle,Handle gooseneck kettle,0.9710694551467896,1,1.0
+824,4170,4189,Pour and close white bottle,Pour and close white bottle,0.9992758631706238,1,1.0
+183,925,944,Move kettle,Move kettle,0.9995984435081482,1,1.0
+159,805,824,Move kettle,Move kettle,0.9936802387237549,1,1.0
+599,3030,3049,Lift gooseneck kettle,Lift gooseneck kettle,0.9968907237052917,1,1.0
+1044,5285,5304,Pour coffee,Pour coffee,0.9991255402565002,1,1.0
+1023,5180,5199,Pour coffee,Pour coffee,0.9883776307106018,1,1.0
+856,4330,4349,Pour and close white bottle,Pour and close white bottle,0.7956017851829529,1,1.0
+978,4950,4969,Prepare for pouring,Prepare for pouring,0.9686282277107239,1,1.0
+423,2145,2164,Handle gooseneck kettle,Handle gooseneck kettle,0.9999376535415649,1,1.0
+591,2990,3009,Lift gooseneck kettle,Lift gooseneck kettle,0.9824287295341492,1,1.0
+589,2980,2999,Lift gooseneck kettle,Lift gooseneck kettle,0.98936927318573,1,1.0
+108,540,559,Pick up and position kettle,Pick up and position kettle,0.988751232624054,1,1.0
+111,555,574,Pick up and position kettle,Pick up and position kettle,0.9965687990188599,1,1.0
+786,3980,3999,Pour and close white bottle,Pour and close white bottle,0.9492108225822449,1,1.0
+733,3710,3729,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9951238036155701,1,1.0
+148,740,759,Pick up and position kettle,Pick up and position kettle,0.9925215840339661,1,1.0
+254,1285,1304,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9939388036727905,1,1.0
+959,4855,4874,Prepare for pouring,Prepare for pouring,0.9986969828605652,1,1.0
+942,4770,4789,Prepare for pouring,Prepare for pouring,0.9975953698158264,1,1.0
+583,2950,2969,Lift gooseneck kettle,Lift gooseneck kettle,0.9976946711540222,1,1.0
+538,2720,2739,Handle gooseneck kettle,Handle gooseneck kettle,0.7994214296340942,1,1.0
+280,1415,1434,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9792502522468567,1,1.0
+649,3280,3299,Lift gooseneck kettle,Lift gooseneck kettle,0.9674037098884583,1,1.0
+304,1535,1554,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9881637692451477,1,1.0
+58,290,309,Pick up and position kettle,Pick up and position kettle,0.9945934414863586,1,1.0
+937,4745,4764,Prepare for pouring,Prepare for pouring,0.9298343062400818,1,1.0
+372,1880,1899,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9766162037849426,1,1.0
+55,275,294,Pick up and position kettle,Pick up and position kettle,0.9963192939758301,1,1.0
+300,1515,1534,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9642841815948486,1,1.0
+460,2330,2349,Handle gooseneck kettle,Handle gooseneck kettle,0.9943934679031372,1,1.0
+873,4425,4444,Prepare for pouring,Prepare for pouring,0.9578757286071777,1,1.0
+539,2725,2744,Handle gooseneck kettle,Handle gooseneck kettle,0.8915141820907593,1,1.0
+158,800,819,Move kettle,Move kettle,0.8621684312820435,1,1.0
+580,2935,2954,Lift gooseneck kettle,Lift gooseneck kettle,0.998227059841156,1,1.0
+772,3910,3929,Pour and close white bottle,Pour and close white bottle,0.9314940571784973,1,1.0
+642,3245,3264,Lift gooseneck kettle,Lift gooseneck kettle,0.7837252020835876,1,1.0
+902,4570,4589,Prepare for pouring,Prepare for pouring,0.9808560013771057,1,1.0
+395,2005,2024,Handle gooseneck kettle,Handle gooseneck kettle,0.9857655167579651,1,1.0
+811,4105,4124,Pour and close white bottle,Pour and close white bottle,0.9984124898910522,1,1.0
+441,2235,2254,Handle gooseneck kettle,Handle gooseneck kettle,0.995520830154419,1,1.0
+700,3545,3564,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.7837938666343689,1,1.0
+496,2510,2529,Handle gooseneck kettle,Handle gooseneck kettle,0.9953358769416809,1,1.0
+155,780,799,Position kettle to pour,Position kettle to pour,0.9725102782249451,1,1.0
+487,2465,2484,Handle gooseneck kettle,Handle gooseneck kettle,0.9899208545684814,1,1.0
+1018,5155,5174,Pour coffee,Pour coffee,0.9974526762962341,1,1.0
+456,2310,2329,Handle gooseneck kettle,Handle gooseneck kettle,0.9923737645149231,1,1.0
+946,4790,4809,Prepare for pouring,Prepare for pouring,0.9796778559684753,1,1.0
+57,285,304,Pick up and position kettle,Pick up and position kettle,0.995374858379364,1,1.0
+991,5020,5039,Pour coffee,Pour coffee,0.9898656010627747,1,1.0
+1060,5365,5384,Pour coffee,Pour coffee,0.9603900909423828,1,1.0
+386,1955,1974,Secure coffee container,Secure coffee container,0.9749641418457031,1,0.699999988079071
+1104,5585,5604,Pour coffee,Pour coffee,0.9938992261886597,1,1.0
+328,1660,1679,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.987898051738739,1,1.0
+461,2335,2354,Handle gooseneck kettle,Handle gooseneck kettle,0.9966513514518738,1,1.0
+658,3325,3344,Lift gooseneck kettle,Lift gooseneck kettle,0.9296523332595825,1,1.0
+1114,5635,5654,Pour coffee,Pour coffee,0.9995755553245544,1,1.0
+417,2115,2134,Handle gooseneck kettle,Handle gooseneck kettle,0.9998677968978882,1,1.0
+365,1845,1864,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9888812899589539,1,1.0
+65,325,344,Pick up and position kettle,Pick up and position kettle,0.9989420771598816,1,1.0
+425,2155,2174,Handle gooseneck kettle,Handle gooseneck kettle,0.9999392032623291,1,1.0
+2,10,29,Pick up and position kettle,Pick up and position kettle,0.9999996423721313,1,1.0
+367,1855,1874,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9368718266487122,1,1.0
+729,3690,3709,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9385597705841064,1,1.0
+388,1965,1984,Secure coffee container,Secure coffee container,0.9999904632568359,1,1.0
+102,510,529,Pick up and position kettle,Pick up and position kettle,0.9362494945526123,1,1.0
+1052,5325,5344,Pour coffee,Pour coffee,0.9952320456504822,1,1.0
+881,4465,4484,Prepare for pouring,Prepare for pouring,0.9399625062942505,1,1.0
+763,3865,3884,Pour and close white bottle,Pour and close white bottle,0.9944643378257751,1,1.0
+351,1775,1794,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9980646967887878,1,1.0
+890,4510,4529,Prepare for pouring,Prepare for pouring,0.9898165464401245,1,1.0
+427,2165,2184,Handle gooseneck kettle,Handle gooseneck kettle,0.9999412298202515,1,1.0
+292,1475,1494,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.998742401599884,1,1.0
+236,1195,1214,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9963905215263367,1,1.0
+988,5005,5024,Pour coffee,Pour coffee,0.986160397529602,1,1.0
+286,1445,1464,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9998183846473694,1,1.0
+36,180,199,Pick up and position kettle,Pick up and position kettle,0.9960013031959534,1,1.0
+1087,5500,5519,Pour coffee,Pour coffee,0.9995282888412476,1,1.0
+524,2650,2669,Handle gooseneck kettle,Handle gooseneck kettle,0.9991266131401062,1,1.0
+799,4045,4064,Pour and close white bottle,Pour and close white bottle,0.9990658164024353,1,1.0
+910,4610,4629,Prepare for pouring,Prepare for pouring,0.9827762842178345,1,1.0
+469,2375,2394,Handle gooseneck kettle,Handle gooseneck kettle,0.9913052916526794,1,1.0
+689,3490,3509,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9932460188865662,1,1.0
+686,3475,3494,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.988308310508728,1,1.0
+1057,5350,5369,Pour coffee,Pour coffee,0.9996711015701294,1,1.0
+879,4455,4474,Prepare for pouring,Prepare for pouring,0.9977964162826538,1,1.0
+868,4400,4419,Prepare for pouring,Move bottle to coffee equipment,0.4292380213737488,0,1.0
+906,4590,4609,Prepare for pouring,Prepare for pouring,0.9713379740715027,1,1.0
+900,4560,4579,Prepare for pouring,Prepare for pouring,0.9777376651763916,1,1.0
+693,3510,3529,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9808523058891296,1,1.0
+452,2290,2309,Handle gooseneck kettle,Handle gooseneck kettle,0.9961833357810974,1,1.0
+843,4265,4284,Pour and close white bottle,Pour and close white bottle,0.9969267249107361,1,1.0
+1085,5490,5509,Pour coffee,Pour coffee,0.9999740123748779,1,1.0
+509,2575,2594,Handle gooseneck kettle,Handle gooseneck kettle,0.9900919795036316,1,1.0
+284,1435,1454,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9996296167373657,1,1.0
+665,3365,3384,Handle gooseneck kettle,Lift gooseneck kettle,0.49640876054763794,0,1.0
+130,650,669,Pick up and position kettle,Pick up and position kettle,0.7289831638336182,1,1.0
+157,795,814,Move kettle,Prepare for pouring,0.907202959060669,0,0.75
+214,1085,1104,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.8439439535140991,1,1.0
+90,450,469,Pick up and position kettle,Pick up and position kettle,0.9820728302001953,1,1.0
+887,4495,4514,Prepare for pouring,Prepare for pouring,0.9929623007774353,1,1.0
+561,2840,2859,Lift gooseneck kettle,Lift gooseneck kettle,0.9902442097663879,1,1.0
+1127,5700,5719,Pour coffee,Pour coffee,0.9999558925628662,1,1.0
+243,1230,1249,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9942165613174438,1,1.0
+1075,5440,5459,Pour coffee,Pour coffee,0.9992406368255615,1,1.0
+544,2750,2769,Handle gooseneck kettle,Handle gooseneck kettle,0.8444201350212097,1,1.0
+80,400,419,Pick up and position kettle,Pick up and position kettle,0.9999707937240601,1,1.0
+232,1175,1194,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.996070384979248,1,1.0
+943,4775,4794,Prepare for pouring,Prepare for pouring,0.9953783750534058,1,1.0
+229,1160,1179,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9992479681968689,1,1.0
+457,2315,2334,Handle gooseneck kettle,Handle gooseneck kettle,0.9963576197624207,1,1.0
+1123,5680,5699,Pour coffee,Pour coffee,0.9999805688858032,1,1.0
+754,3820,3839,Pour and close white bottle,Pour and close white bottle,0.9829885363578796,1,1.0
+285,1440,1459,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9998070597648621,1,1.0
+64,320,339,Pick up and position kettle,Pick up and position kettle,0.9994900226593018,1,1.0
+1073,5430,5449,Pour coffee,Pour coffee,0.9988693594932556,1,1.0
+1012,5125,5144,Pour coffee,Pour coffee,0.990563154220581,1,1.0
+564,2855,2874,Lift gooseneck kettle,Lift gooseneck kettle,0.9545274972915649,1,1.0
+889,4505,4524,Prepare for pouring,Prepare for pouring,0.9954649806022644,1,1.0
+1112,5625,5644,Pour coffee,Pour coffee,0.9991263747215271,1,1.0
+641,3240,3259,Lift gooseneck kettle,Lift gooseneck kettle,0.8361488580703735,1,1.0
+1017,5150,5169,Pour coffee,Pour coffee,0.9985136389732361,1,1.0
+449,2275,2294,Handle gooseneck kettle,Handle gooseneck kettle,0.9813916683197021,1,1.0
+147,735,754,Pick up and position kettle,Pick up and position kettle,0.995578944683075,1,1.0
+604,3055,3074,Lift gooseneck kettle,Lift gooseneck kettle,0.9954867959022522,1,1.0
+376,1900,1919,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9294694066047668,1,1.0
+867,4395,4414,Prepare for pouring,Move bottle to coffee equipment,0.9183506369590759,0,0.75
+875,4435,4454,Prepare for pouring,Prepare for pouring,0.9913655519485474,1,1.0
+429,2175,2194,Handle gooseneck kettle,Handle gooseneck kettle,0.9999455213546753,1,1.0
+970,4910,4929,Prepare for pouring,Prepare for pouring,0.9962051510810852,1,1.0
+847,4285,4304,Pour and close white bottle,Pour and close white bottle,0.9953558444976807,1,1.0
+340,1720,1739,Transfer coffee grounds to dripper,Prepare coffee equipment and scoop grounds,0.6625698208808899,0,1.0
+96,480,499,Pick up and position kettle,Pick up and position kettle,0.9406404495239258,1,1.0
+533,2695,2714,Handle gooseneck kettle,Handle gooseneck kettle,0.9887490272521973,1,1.0
+68,340,359,Pick up and position kettle,Pick up and position kettle,0.9996564388275146,1,1.0
+862,4365,4384,Move bottle to coffee equipment,Move bottle to coffee equipment,0.9295549392700195,1,1.0
+117,585,604,Pick up and position kettle,Pick up and position kettle,0.9866015315055847,1,1.0
+954,4830,4849,Prepare for pouring,Prepare for pouring,0.9592671394348145,1,1.0
+364,1840,1859,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9963776469230652,1,1.0
+607,3070,3089,Lift gooseneck kettle,Lift gooseneck kettle,0.9881171584129333,1,1.0
+1119,5660,5679,Pour coffee,Pour coffee,0.9997475743293762,1,1.0
+28,140,159,Pick up and position kettle,Pick up and position kettle,0.9997637867927551,1,1.0
+840,4250,4269,Pour and close white bottle,Pour and close white bottle,0.9999951124191284,1,1.0
+885,4485,4504,Prepare for pouring,Prepare for pouring,0.9868599772453308,1,1.0
+242,1225,1244,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9972073435783386,1,1.0
+234,1185,1204,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9969569444656372,1,1.0
+778,3940,3959,Pour and close white bottle,Pour and close white bottle,0.9911485910415649,1,1.0
+76,380,399,Pick up and position kettle,Pick up and position kettle,0.9999994039535522,1,1.0
+556,2815,2834,Lift gooseneck kettle,Lift gooseneck kettle,0.9736299514770508,1,1.0
+930,4710,4729,Prepare for pouring,Prepare for pouring,0.9442828893661499,1,1.0
+430,2180,2199,Handle gooseneck kettle,Handle gooseneck kettle,0.9998722076416016,1,1.0
+756,3830,3849,Pour and close white bottle,Pour and close white bottle,0.9914690256118774,1,1.0
+89,445,464,Pick up and position kettle,Pick up and position kettle,0.9992953538894653,1,1.0
+448,2270,2289,Handle gooseneck kettle,Handle gooseneck kettle,0.9824925661087036,1,1.0
+1067,5400,5419,Pour coffee,Pour coffee,0.9841896891593933,1,1.0
+932,4720,4739,Prepare for pouring,Prepare for pouring,0.9588367938995361,1,1.0
+519,2625,2644,Handle gooseneck kettle,Handle gooseneck kettle,0.9776723980903625,1,1.0
+618,3125,3144,Lift gooseneck kettle,Lift gooseneck kettle,0.9966149926185608,1,1.0
+119,595,614,Pick up and position kettle,Pick up and position kettle,0.8436030149459839,1,1.0
+432,2190,2209,Handle gooseneck kettle,Handle gooseneck kettle,0.9991695880889893,1,1.0
+371,1875,1894,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9929855465888977,1,1.0
+659,3330,3349,Lift gooseneck kettle,Lift gooseneck kettle,0.9526427388191223,1,1.0
+666,3370,3389,Handle gooseneck kettle,Handle gooseneck kettle,0.5883771181106567,1,1.0
+1131,5720,5739,Pour coffee,Pour coffee,0.9991409778594971,1,1.0
+742,3755,3774,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9991441965103149,1,1.0
+903,4575,4594,Prepare for pouring,Prepare for pouring,0.9922537207603455,1,1.0
+738,3735,3754,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9761414527893066,1,1.0
+892,4520,4539,Prepare for pouring,Prepare for pouring,0.9875462651252747,1,1.0
+330,1670,1689,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9994981288909912,1,1.0
+1140,5770,5789,Pour milk into coffee,Pour milk into coffee,0.9907722473144531,1,1.0
+490,2480,2499,Handle gooseneck kettle,Handle gooseneck kettle,0.9812375903129578,1,1.0
+859,4345,4364,Pour and close white bottle,Move bottle to coffee equipment,0.7602677345275879,0,0.800000011920929
+758,3840,3859,Pour and close white bottle,Pour and close white bottle,0.9779506325721741,1,1.0
+467,2365,2384,Handle gooseneck kettle,Handle gooseneck kettle,0.9811688661575317,1,1.0
+800,4050,4069,Pour and close white bottle,Pour and close white bottle,0.9997796416282654,1,1.0
+362,1830,1849,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9927527904510498,1,1.0
+74,370,389,Pick up and position kettle,Pick up and position kettle,0.999983549118042,1,1.0
+703,3560,3579,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9971154928207397,1,1.0
+123,615,634,Pick up and position kettle,Pick up and position kettle,0.9891106486320496,1,1.0
+184,930,949,Move kettle,Move kettle,0.9998548030853271,1,1.0
+224,1135,1154,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9741613864898682,1,1.0
+4,20,39,Pick up and position kettle,Pick up and position kettle,0.9999686479568481,1,1.0
+156,785,804,Position kettle to pour,Position kettle to pour,0.7430711388587952,1,0.75
+671,3400,3419,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9133574366569519,1,1.0
+277,1400,1419,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9906198978424072,1,1.0
+503,2545,2564,Handle gooseneck kettle,Handle gooseneck kettle,0.9833166003227234,1,1.0
+715,3620,3639,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9829196929931641,1,1.0
+592,2995,3014,Lift gooseneck kettle,Lift gooseneck kettle,0.9755979776382446,1,1.0
+683,3460,3479,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9976007342338562,1,1.0
+996,5045,5064,Pour coffee,Pour coffee,0.9232520461082458,1,1.0
+194,980,999,Move kettle,Move kettle,0.9990736246109009,1,1.0
+746,3775,3794,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9949281215667725,1,1.0
+635,3210,3229,Lift gooseneck kettle,Lift gooseneck kettle,0.9818018078804016,1,1.0
+1056,5345,5364,Pour coffee,Pour coffee,0.9985406398773193,1,1.0
+91,455,474,Pick up and position kettle,Set down kettle and retrieve white bottle,0.8837008476257324,0,1.0
+713,3610,3629,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9989537000656128,1,1.0
+339,1715,1734,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.5140331387519836,1,1.0
+727,3680,3699,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9950513243675232,1,1.0
+314,1590,1609,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9994611144065857,1,1.0
+914,4630,4649,Prepare for pouring,Prepare for pouring,0.9871756434440613,1,1.0
+655,3310,3329,Lift gooseneck kettle,Lift gooseneck kettle,0.8819901943206787,1,1.0
+1143,5785,5804,Pour milk into coffee,Pour milk into coffee,0.9933353662490845,1,1.0
+261,1320,1339,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.976434588432312,1,1.0
+842,4260,4279,Pour and close white bottle,Pour and close white bottle,0.9988715052604675,1,1.0
+271,1370,1389,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.9330610632896423,1,1.0
+174,880,899,Move kettle,Move kettle,0.9944717884063721,1,1.0
+1111,5620,5639,Pour coffee,Pour coffee,0.999462902545929,1,1.0
+307,1555,1574,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9726678729057312,1,0.699999988079071
+259,1310,1329,Prepare coffee equipment and scoop grounds,Prepare coffee equipment and scoop grounds,0.976366400718689,1,1.0
+516,2610,2629,Handle gooseneck kettle,Handle gooseneck kettle,0.9904450178146362,1,1.0
+608,3075,3094,Lift gooseneck kettle,Lift gooseneck kettle,0.9948533177375793,1,1.0
+169,855,874,Move kettle,Move kettle,0.9985201954841614,1,1.0
+770,3900,3919,Pour and close white bottle,Pour and close white bottle,0.9040527939796448,1,1.0
+443,2245,2264,Handle gooseneck kettle,Handle gooseneck kettle,0.9872705936431885,1,1.0
+542,2740,2759,Handle gooseneck kettle,Handle gooseneck kettle,0.9201287627220154,1,1.0
+129,645,664,Pick up and position kettle,Pick up and position kettle,0.5633102655410767,1,1.0
+1008,5105,5124,Pour coffee,Pour coffee,0.9225276112556458,1,1.0
+987,5000,5019,Pour coffee,Pour coffee,0.9765210747718811,1,1.0
+1135,5740,5759,Pour coffee,Pour coffee,0.9999039173126221,1,1.0
+103,515,534,Pick up and position kettle,Pick up and position kettle,0.855561375617981,1,1.0
+747,3780,3799,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.987868070602417,1,1.0
+541,2735,2754,Handle gooseneck kettle,Handle gooseneck kettle,0.9739682078361511,1,1.0
+995,5040,5059,Pour coffee,Pour coffee,0.8117570281028748,1,1.0
+870,4410,4429,Prepare for pouring,Prepare for pouring,0.9231710433959961,1,1.0
+775,3925,3944,Pour and close white bottle,Pour and close white bottle,0.9695895910263062,1,1.0
+1102,5575,5594,Pour coffee,Pour coffee,0.970496654510498,1,1.0
+598,3025,3044,Lift gooseneck kettle,Lift gooseneck kettle,0.9936872124671936,1,1.0
+502,2540,2559,Handle gooseneck kettle,Handle gooseneck kettle,0.9907812476158142,1,1.0
+1062,5375,5394,Pour coffee,Pour coffee,0.9896829128265381,1,1.0
+393,1995,2014,Handle gooseneck kettle,Handle gooseneck kettle,0.8181822299957275,1,0.75
+851,4305,4324,Pour and close white bottle,Pour and close white bottle,0.9834692478179932,1,1.0
+379,1915,1934,Transfer coffee grounds to dripper,Transfer coffee grounds to dripper,0.9993975162506104,1,1.0
+717,3630,3649,Set down kettle and retrieve white bottle,Set down kettle and retrieve white bottle,0.9999886751174927,1,1.0

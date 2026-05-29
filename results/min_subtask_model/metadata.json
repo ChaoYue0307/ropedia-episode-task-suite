@@ -1,0 +1,89 @@
+{
+  "annotation": "/Users/chaoyue/Library/CloudStorage/Dropbox/Ropedia/data/sample/xperience-10m-sample/annotation.hdf5",
+  "target": "subtask",
+  "window_frames": 20,
+  "stride_frames": 5,
+  "min_label_fraction": 0.6,
+  "test_fraction": 0.25,
+  "epochs": 800,
+  "learning_rate": 0.2,
+  "l2": 0.001,
+  "class_weights": true,
+  "num_windows": 1147,
+  "num_features": 2184,
+  "num_train_windows": 857,
+  "num_test_windows": 290,
+  "classes": [
+    "Pick up and position kettle",
+    "Position kettle to pour",
+    "Move kettle",
+    "Prepare coffee equipment and scoop grounds",
+    "Transfer coffee grounds to dripper",
+    "Secure coffee container",
+    "Handle gooseneck kettle",
+    "Lift gooseneck kettle",
+    "Set down kettle and retrieve white bottle",
+    "Pour and close white bottle",
+    "Move bottle to coffee equipment",
+    "Prepare for pouring",
+    "Pour coffee",
+    "Pour milk into coffee"
+  ],
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 2.8162591457366943,
+      "train_accuracy": 0.028004667444574097
+    },
+    {
+      "epoch": 80,
+      "loss": 0.07561561465263367,
+      "train_accuracy": 0.9883313885647608
+    },
+    {
+      "epoch": 160,
+      "loss": 0.04928078502416611,
+      "train_accuracy": 0.9906651108518086
+    },
+    {
+      "epoch": 240,
+      "loss": 0.04039793089032173,
+      "train_accuracy": 0.9918319719953326
+    },
+    {
+      "epoch": 320,
+      "loss": 0.03557950258255005,
+      "train_accuracy": 0.9929988331388565
+    },
+    {
+      "epoch": 400,
+      "loss": 0.032580211758613586,
+      "train_accuracy": 0.9941656942823804
+    },
+    {
+      "epoch": 480,
+      "loss": 0.03056078404188156,
+      "train_accuracy": 0.9964994165694282
+    },
+    {
+      "epoch": 560,
+      "loss": 0.0291280597448349,
+      "train_accuracy": 0.9964994165694282
+    },
+    {
+      "epoch": 640,
+      "loss": 0.02807188406586647,
+      "train_accuracy": 0.9988331388564761
+    },
+    {
+      "epoch": 720,
+      "loss": 0.027269799262285233,
+      "train_accuracy": 0.9988331388564761
+    },
+    {
+      "epoch": 800,
+      "loss": 0.02664567530155182,
+      "train_accuracy": 1.0
+    }
+  ]
+}

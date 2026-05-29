@@ -1,0 +1,292 @@
+window_index,start_frame,end_frame,true_label,predicted_label,confidence,correct,label_fraction
+387,1960,1979,Transfer coffee to dripper,Transfer coffee to dripper,0.9999850988388062,1,1.0
+874,4440,4459,Place item on table,Place item on table,0.9966922998428345,1,1.0
+287,1455,1474,Grasp coffee scoop,Grasp coffee scoop,0.9989761114120483,1,1.0
+127,640,659,Position kettle to pour,Position kettle to pour,0.7530393600463867,1,1.0
+583,2955,2974,Lift gooseneck kettle,Lift gooseneck kettle,0.9962253570556641,1,1.0
+1110,5630,5649,Pour coffee,Pour coffee,0.9997673630714417,1,1.0
+270,1370,1389,Grasp coffee scoop,Grasp coffee scoop,0.9850214123725891,1,1.0
+111,560,579,Position kettle to pour,Position kettle to pour,0.9967508316040039,1,1.0
+754,3830,3849,Pour liquid from white bottle,Pour liquid from white bottle,0.9973070621490479,1,1.0
+970,4925,4944,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9636858701705933,1,1.0
+89,450,469,Position kettle to pour,Position kettle to pour,0.9969634413719177,1,1.0
+66,335,354,Position kettle to pour,Position kettle to pour,0.9987210631370544,1,1.0
+1112,5640,5659,Pour coffee,Pour coffee,0.9998990297317505,1,1.0
+630,3190,3209,Lift gooseneck kettle,Lift gooseneck kettle,0.9963885545730591,1,1.0
+209,1060,1079,Hold coffee carafe,Hold coffee carafe,0.9981474876403809,1,1.0
+151,760,779,Position kettle to pour,Position kettle to pour,0.9421517252922058,1,1.0
+382,1935,1954,Transfer coffee to dripper,Transfer coffee to dripper,0.9892643094062805,1,1.0
+95,480,499,Position kettle to pour,Position kettle to pour,0.9634878635406494,1,1.0
+251,1275,1294,Grasp coffee scoop,Grasp coffee scoop,0.9839719533920288,1,1.0
+1102,5590,5609,Pour coffee,Pour coffee,0.9996767044067383,1,1.0
+747,3795,3814,Pour liquid from white bottle,Pour liquid from white bottle,0.9885132908821106,1,0.75
+902,4585,4604,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9906471371650696,1,1.0
+126,635,654,Position kettle to pour,Position kettle to pour,0.6797341704368591,1,1.0
+575,2915,2934,Lift gooseneck kettle,Lift gooseneck kettle,0.8785964846611023,1,0.75
+633,3205,3224,Lift gooseneck kettle,Lift gooseneck kettle,0.9774470329284668,1,1.0
+822,4175,4194,Close bottle cap,Close bottle cap,0.9971060156822205,1,1.0
+924,4695,4714,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9880997538566589,1,1.0
+283,1435,1454,Grasp coffee scoop,Grasp coffee scoop,0.9998296499252319,1,1.0
+541,2735,2754,Hold gooseneck kettle,Hold gooseneck kettle,0.9555565118789673,1,1.0
+150,755,774,Position kettle to pour,Position kettle to pour,0.9778384566307068,1,1.0
+1009,5125,5144,Pour coffee,Pour coffee,0.9971845746040344,1,1.0
+456,2310,2329,Hold gooseneck kettle,Hold gooseneck kettle,0.9898731708526611,1,1.0
+441,2235,2254,Hold gooseneck kettle,Hold gooseneck kettle,0.9945858716964722,1,1.0
+245,1245,1264,Grasp coffee scoop,Grasp coffee scoop,0.6255696415901184,1,1.0
+191,965,984,Move kettle,Move kettle,0.9999767541885376,1,1.0
+202,1025,1044,Hold coffee carafe,Hold coffee carafe,0.9746711850166321,1,1.0
+710,3600,3619,Place kettle on table,Place kettle on table,0.9693059325218201,1,1.0
+1115,5655,5674,Pour coffee,Pour coffee,0.9998112320899963,1,1.0
+995,5055,5074,Pour coffee,Pour coffee,0.8888627886772156,1,1.0
+701,3555,3574,Place kettle on table,Lift gooseneck kettle,0.32746750116348267,0,0.75
+534,2700,2719,Hold gooseneck kettle,Hold gooseneck kettle,0.9908808469772339,1,1.0
+927,4710,4729,Wait/Prepare for pouring,Wait/Prepare for pouring,0.8861201405525208,1,1.0
+889,4520,4539,Wait/Prepare for pouring,Wait/Prepare for pouring,0.8447948694229126,1,1.0
+184,930,949,Move kettle,Move kettle,0.9999198913574219,1,1.0
+478,2420,2439,Hold gooseneck kettle,Hold gooseneck kettle,0.9826409220695496,1,1.0
+75,380,399,Position kettle to pour,Position kettle to pour,0.9935355186462402,1,1.0
+699,3540,3559,Move kettle away,Move kettle away,0.9952111840248108,1,1.0
+357,1810,1829,Transfer coffee to dripper,Transfer coffee to dripper,0.9783398509025574,1,1.0
+58,295,314,Position kettle to pour,Position kettle to pour,0.9927603006362915,1,1.0
+788,4005,4024,Close bottle cap,Close bottle cap,0.9921718835830688,1,1.0
+660,3340,3359,Lift gooseneck kettle,Lift gooseneck kettle,0.9418100714683533,1,1.0
+120,605,624,Position kettle to pour,Position kettle to pour,0.9888389110565186,1,1.0
+746,3785,3804,Pick up white bottle,Pour liquid from white bottle,0.9634497761726379,0,0.75
+201,1020,1039,Hold coffee carafe,Hold coffee carafe,0.9814469814300537,1,1.0
+681,3450,3469,Move kettle away,Move kettle away,0.9806166887283325,1,1.0
+594,3010,3029,Lift gooseneck kettle,Lift gooseneck kettle,0.9957681894302368,1,1.0
+371,1880,1899,Transfer coffee to dripper,Transfer coffee to dripper,0.9802567362785339,1,1.0
+281,1425,1444,Grasp coffee scoop,Grasp coffee scoop,0.9998266100883484,1,1.0
+571,2890,2909,Grasp gooseneck kettle,Grasp gooseneck kettle,0.99205082654953,1,1.0
+364,1845,1864,Transfer coffee to dripper,Transfer coffee to dripper,0.9966676831245422,1,1.0
+794,4035,4054,Close bottle cap,Close bottle cap,0.9994582533836365,1,1.0
+436,2210,2229,Hold gooseneck kettle,Hold gooseneck kettle,0.9995641112327576,1,1.0
+342,1735,1754,Transfer coffee to dripper,Transfer coffee to dripper,0.9988400340080261,1,1.0
+190,960,979,Move kettle,Move kettle,0.9999854564666748,1,1.0
+509,2575,2594,Hold gooseneck kettle,Hold gooseneck kettle,0.9914180040359497,1,1.0
+340,1725,1744,Transfer coffee to dripper,Transfer coffee to dripper,0.9955247640609741,1,1.0
+153,770,789,Position kettle to pour,Position kettle to pour,0.9856932163238525,1,1.0
+848,4305,4324,Close bottle cap,Close bottle cap,0.9986951947212219,1,1.0
+276,1400,1419,Grasp coffee scoop,Grasp coffee scoop,0.9979609251022339,1,1.0
+496,2510,2529,Hold gooseneck kettle,Hold gooseneck kettle,0.9931339025497437,1,1.0
+516,2610,2629,Hold gooseneck kettle,Hold gooseneck kettle,0.9855904579162598,1,1.0
+934,4745,4764,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9653261303901672,1,1.0
+640,3240,3259,Lift gooseneck kettle,Lift gooseneck kettle,0.8752135634422302,1,1.0
+453,2295,2314,Hold gooseneck kettle,Hold gooseneck kettle,0.9558573365211487,1,1.0
+919,4670,4689,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9978805780410767,1,1.0
+985,5005,5024,Pour coffee,Pour coffee,0.9906360507011414,1,1.0
+853,4330,4349,Close bottle cap,Close bottle cap,0.9797936081886292,1,1.0
+1120,5680,5699,Pour coffee,Pour coffee,0.9997881054878235,1,1.0
+327,1660,1679,Transfer coffee to dripper,Transfer coffee to dripper,0.9889201521873474,1,1.0
+812,4125,4144,Close bottle cap,Close bottle cap,0.9936261177062988,1,1.0
+525,2655,2674,Hold gooseneck kettle,Hold gooseneck kettle,0.9973098039627075,1,1.0
+140,705,724,Position kettle to pour,Position kettle to pour,0.9688760042190552,1,1.0
+625,3165,3184,Lift gooseneck kettle,Lift gooseneck kettle,0.9929285645484924,1,1.0
+623,3155,3174,Lift gooseneck kettle,Lift gooseneck kettle,0.9968882203102112,1,1.0
+614,3110,3129,Lift gooseneck kettle,Lift gooseneck kettle,0.998606264591217,1,1.0
+42,215,234,Position kettle to pour,Position kettle to pour,0.9998880624771118,1,1.0
+1049,5325,5344,Pour coffee,Pour coffee,0.9915184378623962,1,1.0
+923,4690,4709,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9977468848228455,1,1.0
+1014,5150,5169,Pour coffee,Pour coffee,0.9967579245567322,1,1.0
+574,2905,2924,Grasp gooseneck kettle,Grasp gooseneck kettle,0.41789671778678894,1,0.75
+888,4515,4534,Wait/Prepare for pouring,Wait/Prepare for pouring,0.44671300053596497,1,0.75
+17,85,104,Pick up kettle,Pick up kettle,0.9995889067649841,1,1.0
+366,1855,1874,Transfer coffee to dripper,Transfer coffee to dripper,0.9613022804260254,1,1.0
+601,3045,3064,Lift gooseneck kettle,Lift gooseneck kettle,0.9909961223602295,1,1.0
+85,430,449,Position kettle to pour,Position kettle to pour,0.989672064781189,1,1.0
+653,3305,3324,Lift gooseneck kettle,Lift gooseneck kettle,0.9793419241905212,1,1.0
+869,4415,4434,Place item on table,Place item on table,0.9875659942626953,1,1.0
+350,1775,1794,Transfer coffee to dripper,Transfer coffee to dripper,0.995871365070343,1,1.0
+784,3985,4004,Close bottle cap,Close bottle cap,0.9780990481376648,1,1.0
+395,2005,2024,Hold gooseneck kettle,Hold gooseneck kettle,0.9873632788658142,1,1.0
+290,1470,1489,Grasp coffee scoop,Grasp coffee scoop,0.9962434768676758,1,1.0
+239,1210,1229,Hold coffee carafe,Hold coffee carafe,0.9590131640434265,1,1.0
+505,2555,2574,Hold gooseneck kettle,Hold gooseneck kettle,0.9635257124900818,1,1.0
+1073,5445,5464,Pour coffee,Pour coffee,0.9985100626945496,1,1.0
+1076,5460,5479,Pour coffee,Pour coffee,0.999836802482605,1,1.0
+289,1465,1484,Grasp coffee scoop,Grasp coffee scoop,0.9988101720809937,1,1.0
+507,2565,2584,Hold gooseneck kettle,Hold gooseneck kettle,0.9711436629295349,1,1.0
+417,2115,2134,Hold gooseneck kettle,Hold gooseneck kettle,0.9994571805000305,1,1.0
+1131,5735,5754,Pour coffee,Pour coffee,0.9999359846115112,1,1.0
+70,355,374,Position kettle to pour,Position kettle to pour,0.9953956007957458,1,1.0
+169,855,874,Move kettle,Move kettle,0.9990498423576355,1,1.0
+956,4855,4874,Wait/Prepare for pouring,Wait/Prepare for pouring,0.992206871509552,1,1.0
+531,2685,2704,Hold gooseneck kettle,Hold gooseneck kettle,0.9337590932846069,1,1.0
+992,5040,5059,Pour coffee,Pour coffee,0.7389196753501892,1,1.0
+982,4985,5004,Wait/Prepare for pouring,Pour coffee,0.276622474193573,0,0.75
+806,4095,4114,Close bottle cap,Close bottle cap,0.9969751834869385,1,1.0
+958,4865,4884,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9785407185554504,1,1.0
+926,4705,4724,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9038058519363403,1,1.0
+337,1710,1729,Transfer coffee to dripper,Transfer coffee to dripper,0.8600638508796692,1,1.0
+32,165,184,Position kettle to pour,Position kettle to pour,0.9998767375946045,1,1.0
+1059,5375,5394,Pour coffee,Pour coffee,0.9748890995979309,1,1.0
+661,3345,3364,Lift gooseneck kettle,Lift gooseneck kettle,0.9635754227638245,1,1.0
+227,1150,1169,Hold coffee carafe,Hold coffee carafe,0.9939223527908325,1,1.0
+1133,5745,5764,Pour coffee,Pour coffee,0.9999700784683228,1,1.0
+514,2600,2619,Hold gooseneck kettle,Hold gooseneck kettle,0.9858402013778687,1,1.0
+141,710,729,Position kettle to pour,Position kettle to pour,0.980246365070343,1,1.0
+551,2785,2804,Hold gooseneck kettle,Hold gooseneck kettle,0.5896778702735901,1,0.75
+613,3105,3124,Lift gooseneck kettle,Lift gooseneck kettle,0.9989621639251709,1,1.0
+740,3755,3774,Pick up white bottle,Pick up white bottle,0.9975752234458923,1,1.0
+422,2140,2159,Hold gooseneck kettle,Hold gooseneck kettle,0.9993013143539429,1,1.0
+301,1525,1544,Grasp coffee scoop,Grasp coffee scoop,0.9266647100448608,1,1.0
+425,2155,2174,Hold gooseneck kettle,Hold gooseneck kettle,0.9997003078460693,1,1.0
+921,4680,4699,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9978470802307129,1,1.0
+157,795,814,Move kettle,Wait/Prepare for pouring,0.8782486915588379,0,0.75
+1064,5400,5419,Pour coffee,Pour coffee,0.9944543242454529,1,1.0
+993,5045,5064,Pour coffee,Pour coffee,0.6419404149055481,1,1.0
+1087,5515,5534,Pour coffee,Pour coffee,0.9997286200523376,1,1.0
+237,1200,1219,Hold coffee carafe,Hold coffee carafe,0.9564385414123535,1,1.0
+908,4615,4634,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9976874589920044,1,1.0
+432,2190,2209,Hold gooseneck kettle,Hold gooseneck kettle,0.9988911747932434,1,1.0
+133,670,689,Position kettle to pour,Position kettle to pour,0.9089042544364929,1,1.0
+223,1130,1149,Hold coffee carafe,Hold coffee carafe,0.9918577075004578,1,1.0
+779,3960,3979,Close bottle cap,Close bottle cap,0.9989832043647766,1,1.0
+244,1240,1259,Grasp coffee scoop,Grasp coffee scoop,0.7710487842559814,1,1.0
+464,2350,2369,Hold gooseneck kettle,Hold gooseneck kettle,0.9964284300804138,1,1.0
+644,3260,3279,Lift gooseneck kettle,Lift gooseneck kettle,0.9626320004463196,1,1.0
+816,4145,4164,Close bottle cap,Close bottle cap,0.9969769716262817,1,1.0
+246,1250,1269,Grasp coffee scoop,Grasp coffee scoop,0.7260190844535828,1,1.0
+130,655,674,Position kettle to pour,Position kettle to pour,0.9954789876937866,1,1.0
+758,3850,3869,Pour liquid from white bottle,Pour liquid from white bottle,0.9995390176773071,1,1.0
+1082,5490,5509,Pour coffee,Pour coffee,0.9977394342422485,1,1.0
+573,2900,2919,Grasp gooseneck kettle,Grasp gooseneck kettle,0.9719263911247253,1,1.0
+832,4225,4244,Close bottle cap,Close bottle cap,0.9847716689109802,1,1.0
+988,5020,5039,Pour coffee,Pour coffee,0.993166983127594,1,1.0
+867,4405,4424,Place item on table,Place item on table,0.9991784691810608,1,1.0
+511,2585,2604,Hold gooseneck kettle,Hold gooseneck kettle,0.9968104958534241,1,1.0
+22,110,129,Pick up kettle,Pick up kettle,0.9997296929359436,1,1.0
+375,1900,1919,Transfer coffee to dripper,Transfer coffee to dripper,0.9645144939422607,1,1.0
+913,4640,4659,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9977066516876221,1,1.0
+823,4180,4199,Close bottle cap,Close bottle cap,0.9991514682769775,1,1.0
+1142,5795,5814,Pour milk into coffee,Pour milk into coffee,0.9979777932167053,1,0.75
+714,3620,3639,Place kettle on table,Place kettle on table,0.9999288320541382,1,1.0
+339,1720,1739,Transfer coffee to dripper,Transfer coffee to dripper,0.9543243050575256,1,1.0
+97,490,509,Position kettle to pour,Position kettle to pour,0.9918493032455444,1,1.0
+550,2780,2799,Hold gooseneck kettle,Hold gooseneck kettle,0.7291110157966614,1,1.0
+24,120,139,Pick up kettle,Pick up kettle,0.9947311878204346,1,1.0
+760,3860,3879,Pour liquid from white bottle,Pour liquid from white bottle,0.999947190284729,1,1.0
+4,20,39,Pick up kettle,Pick up kettle,0.9994105100631714,1,1.0
+841,4270,4289,Close bottle cap,Close bottle cap,0.9973199963569641,1,1.0
+363,1840,1859,Transfer coffee to dripper,Transfer coffee to dripper,0.9948491454124451,1,1.0
+561,2840,2859,Grasp gooseneck kettle,Grasp gooseneck kettle,0.998130738735199,1,1.0
+1099,5575,5594,Pour coffee,Pour coffee,0.998013973236084,1,1.0
+12,60,79,Pick up kettle,Pick up kettle,0.9413565397262573,1,1.0
+753,3825,3844,Pour liquid from white bottle,Pour liquid from white bottle,0.9974141120910645,1,1.0
+783,3980,3999,Close bottle cap,Close bottle cap,0.9717428684234619,1,1.0
+300,1520,1539,Grasp coffee scoop,Grasp coffee scoop,0.9681277275085449,1,1.0
+205,1040,1059,Hold coffee carafe,Hold coffee carafe,0.99347984790802,1,1.0
+727,3690,3709,Pick up white bottle,Pick up white bottle,0.9971418976783752,1,1.0
+71,360,379,Position kettle to pour,Position kettle to pour,0.9896644949913025,1,1.0
+631,3195,3214,Lift gooseneck kettle,Lift gooseneck kettle,0.9944307208061218,1,1.0
+872,4430,4449,Place item on table,Place item on table,0.9967654943466187,1,1.0
+522,2640,2659,Hold gooseneck kettle,Hold gooseneck kettle,0.9951849579811096,1,1.0
+156,785,804,Position kettle to pour,Position kettle to pour,0.6322119235992432,1,0.75
+545,2755,2774,Hold gooseneck kettle,Hold gooseneck kettle,0.945419192314148,1,1.0
+846,4295,4314,Close bottle cap,Close bottle cap,0.9990009665489197,1,1.0
+402,2040,2059,Hold gooseneck kettle,Hold gooseneck kettle,0.9833129048347473,1,1.0
+579,2935,2954,Lift gooseneck kettle,Lift gooseneck kettle,0.9918151497840881,1,1.0
+3,15,34,Pick up kettle,Pick up kettle,0.9999662637710571,1,1.0
+1095,5555,5574,Pour coffee,Pour coffee,0.9965080618858337,1,1.0
+370,1875,1894,Transfer coffee to dripper,Transfer coffee to dripper,0.9834166765213013,1,1.0
+639,3235,3254,Lift gooseneck kettle,Lift gooseneck kettle,0.9446413516998291,1,1.0
+543,2745,2764,Hold gooseneck kettle,Hold gooseneck kettle,0.637692391872406,1,1.0
+876,4450,4469,Place item on table,Place item on table,0.9980624318122864,1,1.0
+673,3410,3429,Move kettle away,Move kettle away,0.9480058550834656,1,1.0
+690,3495,3514,Move kettle away,Move kettle away,0.9971529245376587,1,1.0
+807,4100,4119,Close bottle cap,Close bottle cap,0.9961142539978027,1,1.0
+1135,5755,5774,Pour coffee,Pour coffee,0.999982476234436,1,1.0
+1053,5345,5364,Pour coffee,Pour coffee,0.9992876648902893,1,1.0
+404,2050,2069,Hold gooseneck kettle,Hold gooseneck kettle,0.9917397499084473,1,1.0
+775,3940,3959,Close bottle cap,Close bottle cap,0.9753587245941162,1,1.0
+931,4730,4749,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9781820774078369,1,1.0
+490,2480,2499,Hold gooseneck kettle,Hold gooseneck kettle,0.9954773783683777,1,1.0
+933,4740,4759,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9866541028022766,1,1.0
+361,1830,1849,Transfer coffee to dripper,Transfer coffee to dripper,0.9895691275596619,1,1.0
+50,255,274,Position kettle to pour,Position kettle to pour,0.9929302334785461,1,1.0
+1106,5610,5629,Pour coffee,Pour coffee,0.9994568228721619,1,1.0
+129,650,669,Position kettle to pour,Position kettle to pour,0.9873721599578857,1,1.0
+162,820,839,Move kettle,Move kettle,0.9995529055595398,1,1.0
+303,1535,1554,Grasp coffee scoop,Grasp coffee scoop,0.9901080131530762,1,1.0
+121,610,629,Position kettle to pour,Position kettle to pour,0.9694861769676208,1,1.0
+88,445,464,Position kettle to pour,Position kettle to pour,0.9984846711158752,1,1.0
+706,3580,3599,Place kettle on table,Place kettle on table,0.9980011582374573,1,1.0
+225,1140,1159,Hold coffee carafe,Hold coffee carafe,0.9937357306480408,1,1.0
+547,2765,2784,Hold gooseneck kettle,Hold gooseneck kettle,0.9853013157844543,1,1.0
+688,3485,3504,Move kettle away,Move kettle away,0.9973560571670532,1,1.0
+554,2805,2824,Grasp gooseneck kettle,Grasp gooseneck kettle,0.9667224287986755,1,1.0
+734,3725,3744,Pick up white bottle,Pick up white bottle,0.9492542147636414,1,1.0
+868,4410,4429,Place item on table,Place item on table,0.9982045888900757,1,1.0
+164,830,849,Move kettle,Move kettle,0.9998146891593933,1,1.0
+675,3420,3439,Move kettle away,Move kettle away,0.8698438405990601,1,1.0
+615,3115,3134,Lift gooseneck kettle,Lift gooseneck kettle,0.9991068243980408,1,1.0
+1116,5660,5679,Pour coffee,Pour coffee,0.9998217225074768,1,1.0
+14,70,89,Pick up kettle,Pick up kettle,0.9996358156204224,1,1.0
+676,3425,3444,Move kettle away,Move kettle away,0.9042681455612183,1,1.0
+338,1715,1734,Transfer coffee to dripper,Transfer coffee to dripper,0.9635986685752869,1,1.0
+684,3465,3484,Move kettle away,Move kettle away,0.9996016621589661,1,1.0
+313,1590,1609,Transfer coffee to dripper,Transfer coffee to dripper,0.9988517761230469,1,1.0
+796,4045,4064,Close bottle cap,Close bottle cap,0.993010938167572,1,1.0
+603,3055,3074,Lift gooseneck kettle,Lift gooseneck kettle,0.9943827390670776,1,1.0
+117,590,609,Position kettle to pour,Position kettle to pour,0.9678398966789246,1,1.0
+393,1995,2014,Hold gooseneck kettle,Hold gooseneck kettle,0.8420007824897766,1,0.75
+105,530,549,Position kettle to pour,Position kettle to pour,0.9781985282897949,1,1.0
+745,3780,3799,Pick up white bottle,Pour liquid from white bottle,0.8173922300338745,0,1.0
+755,3835,3854,Pour liquid from white bottle,Pour liquid from white bottle,0.9972805976867676,1,1.0
+777,3950,3969,Close bottle cap,Close bottle cap,0.9986951947212219,1,1.0
+536,2710,2729,Hold gooseneck kettle,Hold gooseneck kettle,0.9704371094703674,1,1.0
+1066,5410,5429,Pour coffee,Pour coffee,0.9910123348236084,1,1.0
+389,1970,1989,Transfer coffee to dripper,Transfer coffee to dripper,0.9983313679695129,1,1.0
+166,840,859,Move kettle,Move kettle,0.9997310042381287,1,1.0
+213,1080,1099,Hold coffee carafe,Hold coffee carafe,0.999186098575592,1,1.0
+793,4030,4049,Close bottle cap,Close bottle cap,0.9558804631233215,1,1.0
+1083,5495,5514,Pour coffee,Pour coffee,0.9989388585090637,1,1.0
+1015,5155,5174,Pour coffee,Pour coffee,0.9659033417701721,1,1.0
+928,4715,4734,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9282432198524475,1,1.0
+906,4605,4624,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9869177937507629,1,1.0
+159,805,824,Move kettle,Move kettle,0.9995285272598267,1,1.0
+28,140,159,Pick up kettle,Pick up kettle,0.9993540644645691,1,1.0
+627,3175,3194,Lift gooseneck kettle,Lift gooseneck kettle,0.9761354327201843,1,1.0
+986,5010,5029,Pour coffee,Pour coffee,0.9920209050178528,1,1.0
+306,1555,1574,Transfer coffee to dripper,Transfer coffee to dripper,0.9687557220458984,1,0.699999988079071
+218,1105,1124,Hold coffee carafe,Hold coffee carafe,0.9982855916023254,1,1.0
+1058,5370,5389,Pour coffee,Pour coffee,0.9842789769172668,1,1.0
+138,695,714,Position kettle to pour,Position kettle to pour,0.9785972237586975,1,1.0
+658,3330,3349,Lift gooseneck kettle,Lift gooseneck kettle,0.9530187249183655,1,1.0
+652,3300,3319,Lift gooseneck kettle,Lift gooseneck kettle,0.9695901274681091,1,1.0
+194,980,999,Move kettle,Move kettle,0.9994500279426575,1,1.0
+862,4375,4394,Close bottle cap,Close bottle cap,0.9186854958534241,1,1.0
+1105,5605,5624,Pour coffee,Pour coffee,0.9990960359573364,1,1.0
+457,2315,2334,Hold gooseneck kettle,Hold gooseneck kettle,0.9932669401168823,1,1.0
+1085,5505,5524,Pour coffee,Pour coffee,0.9996920824050903,1,1.0
+991,5035,5054,Pour coffee,Pour coffee,0.9334730505943298,1,1.0
+1092,5540,5559,Pour coffee,Pour coffee,0.9999873638153076,1,1.0
+1114,5650,5669,Pour coffee,Pour coffee,0.9998873472213745,1,1.0
+90,455,474,Position kettle to pour,Position kettle to pour,0.9976882934570312,1,1.0
+733,3720,3739,Pick up white bottle,Pick up white bottle,0.9107154011726379,1,1.0
+427,2165,2184,Hold gooseneck kettle,Hold gooseneck kettle,0.9997829794883728,1,1.0
+1025,5205,5224,Pour coffee,Pour coffee,0.998308539390564,1,1.0
+937,4760,4779,Wait/Prepare for pouring,Wait/Prepare for pouring,0.9910959005355835,1,1.0
+820,4165,4184,Close bottle cap,Close bottle cap,0.9882490634918213,1,1.0
+605,3065,3084,Lift gooseneck kettle,Lift gooseneck kettle,0.9985682964324951,1,1.0
+443,2245,2264,Hold gooseneck kettle,Hold gooseneck kettle,0.9850770831108093,1,1.0
+1079,5475,5494,Pour coffee,Pour coffee,0.9996129870414734,1,1.0
+477,2415,2434,Hold gooseneck kettle,Hold gooseneck kettle,0.9767503142356873,1,1.0
+805,4090,4109,Close bottle cap,Close bottle cap,0.9957895874977112,1,1.0
+378,1915,1934,Transfer coffee to dripper,Transfer coffee to dripper,0.9992600083351135,1,1.0
+702,3560,3579,Place kettle on table,Place kettle on table,0.610595166683197,1,1.0
+953,4840,4859,Wait/Prepare for pouring,Wait/Prepare for pouring,0.993428647518158,1,1.0
+329,1670,1689,Transfer coffee to dripper,Transfer coffee to dripper,0.9992157220840454,1,1.0
+236,1195,1214,Hold coffee carafe,Hold coffee carafe,0.9907007217407227,1,1.0
+705,3575,3594,Place kettle on table,Place kettle on table,0.9937787652015686,1,1.0
+863,4380,4399,Close bottle cap,Close bottle cap,0.9159041047096252,1,1.0
+292,1480,1499,Grasp coffee scoop,Grasp coffee scoop,0.9992620348930359,1,1.0
+429,2175,2194,Hold gooseneck kettle,Hold gooseneck kettle,0.9998106360435486,1,1.0
+951,4830,4849,Wait/Prepare for pouring,Wait/Prepare for pouring,0.980838418006897,1,1.0
+1005,5105,5124,Pour coffee,Pour coffee,0.997597873210907,1,1.0
+521,2635,2654,Hold gooseneck kettle,Hold gooseneck kettle,0.9902897477149963,1,1.0
+449,2275,2294,Hold gooseneck kettle,Hold gooseneck kettle,0.995271623134613,1,1.0
+294,1490,1509,Grasp coffee scoop,Grasp coffee scoop,0.9994930028915405,1,1.0
+122,615,634,Position kettle to pour,Position kettle to pour,0.9792848825454712,1,1.0
+979,4970,4989,Wait/Prepare for pouring,Wait/Prepare for pouring,0.998624324798584,1,1.0
+562,2845,2864,Grasp gooseneck kettle,Grasp gooseneck kettle,0.9975367784500122,1,1.0
