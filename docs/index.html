@@ -270,6 +270,7 @@
     .signal strong { text-align: right; font-family: var(--font-mono); font-size: 13px; font-variant-numeric: tabular-nums; }
 
     section { padding: 88px 0 96px; border-bottom: 1px solid var(--soft-line); }
+    #suite { padding: 62px 0 76px; }
     .section-head {
       display: flex;
       justify-content: space-between;
@@ -310,6 +311,12 @@
     }
     .architecture-image {
       display: block;
+    }
+    .callout-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
     }
     .two-col {
       display: grid;
@@ -453,14 +460,14 @@
     @media (max-width: 960px) {
       .hero-inner, .two-col { grid-template-columns: 1fr; }
       .hero-inner { min-height: 0; }
-      .hero-stats, .models, .task-grid, .artifact-grid, .chart-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-stats, .models, .task-grid, .artifact-grid, .chart-grid, .callout-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .section-head { display: block; }
       .section-head p { margin-top: 14px; }
       .nav-links { display: none; }
     }
     @media (max-width: 640px) {
       .wrap { width: min(100% - 28px, var(--max)); }
-      .hero-stats, .models, .task-grid, .artifact-grid, .chart-grid { grid-template-columns: 1fr; }
+      .hero-stats, .models, .task-grid, .artifact-grid, .chart-grid, .callout-row { grid-template-columns: 1fr; }
       .hero-inner, section { padding: 46px 0; }
       .signal { grid-template-columns: 1fr; }
       .signal strong { text-align: left; }
@@ -485,6 +492,7 @@
         <span>Ropedia Episode Task Suite</span>
       </a>
       <div class="nav-links" aria-label="Page navigation">
+        <a href="#suite">Suite</a>
         <a href="#pipeline">Pipeline</a>
         <a href="#models">Models</a>
         <a href="#architectures">Arch</a>
@@ -508,7 +516,7 @@
           and a clear line between single-episode inspection and real held-out evaluation.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#tasks">Inspect 12 tasks</a>
+          <a class="button primary" href="#suite">Inspect 12 tasks</a>
           <a class="button" href="https://cy0307-ropedia-episode-task-suite.static.hf.space/">Open HF app</a>
           <a class="button" href="https://github.com/ChaoYue0307/ropedia-episode-task-suite">View repository</a>
           <a class="button" href="data/summary_metrics.json">Read metrics JSON</a>
@@ -536,18 +544,29 @@
   </header>
 
   <main id="main">
+    <section id="suite">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Ropedia 12-task suite, first.</h2>
+          <p>The top-level map now appears before the lower implementation sections, using sample-modality thumbnails plus verified task names and metrics.</p>
+        </div>
+        <img class="task-suite-image" src="assets/task_suite_infographic.png" alt="ChatGPT-image-backed infographic showing all 12 Ropedia episode tasks">
+      </div>
+    </section>
+
     <section id="pipeline">
       <div class="wrap">
         <div class="section-head">
           <h2>From raw episode to checked artifacts.</h2>
           <p>Every script works from one data contract: aligned multimodal windows, explicit labels, cached feature extraction, and artifact-first evaluation.</p>
         </div>
-        <div class="two-col">
-          <img class="pipeline-image" src="assets/pipeline_diagram.svg" alt="Verified Ropedia all-modality pipeline diagram">
+        <img class="pipeline-image" src="assets/pipeline_diagram.png" alt="Verified Ropedia all-modality pipeline diagram">
+        <div class="callout-row">
           <div class="callout">
             <h3>What this project proves</h3>
             <p>It proves the full engineering loop: reading Ropedia sample data, aligning modalities, converting them into model-ready windows, defining meaningful tasks, producing metrics, and packaging every artifact for review.</p>
-            <br>
+          </div>
+          <div class="callout">
             <h3>What it does not prove</h3>
             <p>It does not claim general embodied intelligence. A single episode cannot support cross-environment generalization; that requires many episodes and held-out episode splits.</p>
           </div>
@@ -574,20 +593,19 @@
     <section id="architectures">
       <div class="wrap">
         <div class="section-head">
-          <h2>The 12 tasks share three head families.</h2>
-          <p>The diagram separates the shared episode-window feature pipeline from the task-specific heads: linear softmax, ridge projection/regression, and multi-label logistic regression.</p>
+          <h2>The 12 tasks share four head families.</h2>
+          <p>The diagram separates the shared episode-window feature pipeline from the task-specific heads: linear softmax, ridge regression, ridge ranking, and multi-label logistic regression.</p>
         </div>
-        <img class="architecture-image" src="assets/task_architectures.svg" alt="Verified minimal architecture diagram for all 12 Ropedia episode tasks">
+        <img class="architecture-image" src="assets/task_architectures.png" alt="Verified minimal architecture diagram for all 12 Ropedia episode tasks">
       </div>
     </section>
 
     <section id="tasks">
       <div class="wrap">
         <div class="section-head">
-          <h2>Single-episode tasks, deliberately scoped.</h2>
-          <p>The suite treats one episode as a controlled lab for temporal structure, modality alignment, retrieval, reconstruction, and action understanding.</p>
+          <h2>Task cards and metrics.</h2>
+          <p>The same 12 tasks are kept filterable here so the supervised, forecast, retrieval, and diagnostic probes can be inspected individually.</p>
         </div>
-        <img class="task-suite-image" src="assets/task_suite_infographic.png" alt="ChatGPT-image-backed infographic showing all 12 Ropedia episode tasks">
         <div class="task-toolbar" aria-label="Task filters">
           <button class="filter active" data-filter="all">All tasks</button>
           <button class="filter" data-filter="supervised">Supervised</button>

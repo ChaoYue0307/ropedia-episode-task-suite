@@ -62,9 +62,14 @@ with [`scripts/render_task_suite_infographic.py`](scripts/render_task_suite_info
 so the published PNG is a presentation graphic with verified labels and metrics,
 not a hallucinated metric sheet.
 
-![Verified Pipeline](docs/assets/pipeline_diagram.svg)
+![Verified Pipeline](docs/assets/pipeline_diagram.png)
 
-![Minimal 12-task model architectures](docs/assets/task_architectures.svg)
+![Minimal 12-task model architectures](docs/assets/task_architectures.png)
+
+The pipeline and architecture figures use the same pattern: ChatGPT-image
+provides text-free visual backgrounds, while
+[`scripts/render_overview_figures.py`](scripts/render_overview_figures.py)
+overlays exact labels, dimensions, and metrics from the committed result files.
 
 ## Scope
 
@@ -82,6 +87,7 @@ scripts/
   episode_task_suite.py             # 12 end-to-end task definitions
   generate_visualizations.py        # refreshes SVG charts + summary JSON
   render_task_suite_infographic.py  # renders the ChatGPT-image-backed PNG
+  render_overview_figures.py        # renders polished pipeline/architecture PNGs
 
 results/
   min_action_model/                 # motion-only action baseline artifacts
@@ -94,7 +100,8 @@ docs/
   index.html                        # GitHub Pages dashboard
   data/summary_metrics.json         # website-readable metrics bundle
   assets/task_suite_infographic.png # 12-task presentation graphic
-  assets/task_architectures.svg     # verified 12-task minimal architecture map
+  assets/pipeline_diagram.png       # verified episode pipeline graphic
+  assets/task_architectures.png     # verified 12-task minimal architecture map
   assets/charts/*.svg               # regenerated visualizations
 
 notes/
@@ -173,6 +180,8 @@ Refresh charts and the website data bundle:
 
 ```bash
 python scripts/generate_visualizations.py
+python scripts/render_overview_figures.py
+python scripts/render_task_suite_infographic.py
 ```
 
 ## Minimal 12-Task Architectures

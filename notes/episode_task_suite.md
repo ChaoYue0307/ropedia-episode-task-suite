@@ -92,7 +92,7 @@ Task-specific architecture details:
 Diagram:
 
 ```text
-docs/assets/task_architectures.svg
+docs/assets/task_architectures.png
 ```
 
 ## Current Results
