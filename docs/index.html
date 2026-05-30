@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ropedia Episode Task Suite</title>
-  <meta name="description" content="A transparent all-modality task suite for one public Ropedia / Xperience-10M sample episode.">
+  <meta name="description" content="A transparent multimodal task suite for one public Ropedia / Xperience-10M sample episode.">
   <meta property="og:title" content="Ropedia Episode Task Suite">
   <meta property="og:description" content="One public embodied-AI episode, converted into reproducible multimodal tasks, baselines, metrics, and diagrams.">
   <meta property="og:image" content="assets/task_suite_infographic.png">
@@ -512,8 +512,8 @@
         <h1>One Ropedia episode, made auditable.</h1>
         <p class="hero-copy">
           A compact research lab for the public Ropedia / Xperience-10M sample:
-          aligned multimodal windows, 12 task contracts, small baseline heads, committed metrics,
-          and a clear line between single-episode inspection and real held-out evaluation.
+          video, audio, depth, pose, motion capture, inertial sensing, and language annotation,
+          with an explicit record of which modalities enter the current minimal feature vector.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#suite">Inspect 12 tasks</a>
@@ -524,13 +524,13 @@
         <div class="hero-stats">
           <div class="stat"><strong>5,821</strong><span>frames in sample episode</span></div>
           <div class="stat"><strong>1,161</strong><span>20-frame windows</span></div>
-          <div class="stat"><strong>8,378</strong><span>all-modality feature dimensions</span></div>
+          <div class="stat"><strong>8,378</strong><span>current feature dimensions</span></div>
           <div class="stat"><strong>12</strong><span>end-to-end task definitions</span></div>
         </div>
       </div>
       <div class="hero-panel" aria-label="Signal summary">
         <div class="panel-top">
-          <span>all-modality feature allocation</span>
+          <span>current feature allocation</span>
           <span>window vector</span>
         </div>
         <div class="signal"><code>mocap</code><div class="track"><span style="--w:25.3%;--c:#1f6c9f"></span></div><strong>2,121</strong></div>
@@ -548,7 +548,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Ropedia 12-task suite, first.</h2>
-          <p>The top-level map now appears before the lower implementation sections, using sample-modality thumbnails plus verified task names and metrics.</p>
+          <p>The top-level map shows the Xperience-10M sample modalities and the verified 12-task results. Audio is present in the sample MP4 stream, but the current 8,378-d baseline manifest does not featurize it.</p>
         </div>
         <img class="task-suite-image" src="assets/task_suite_infographic.png" alt="ChatGPT-image-backed infographic showing all 12 Ropedia episode tasks">
       </div>
@@ -558,9 +558,9 @@
       <div class="wrap">
         <div class="section-head">
           <h2>From raw episode to checked artifacts.</h2>
-          <p>Every script works from one data contract: aligned multimodal windows, explicit labels, cached feature extraction, and artifact-first evaluation.</p>
+          <p>Every script works from one data contract: aligned multimodal windows, explicit labels, cached feature extraction, and a manifest that makes omitted modalities visible.</p>
         </div>
-        <img class="pipeline-image" src="assets/pipeline_diagram.png" alt="Verified Ropedia all-modality pipeline diagram">
+        <img class="pipeline-image" src="assets/pipeline_diagram.png" alt="Verified Ropedia multimodal pipeline diagram">
         <div class="callout-row">
           <div class="callout">
             <h3>What this project proves</h3>
@@ -578,13 +578,13 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Small baselines, no hidden machinery.</h2>
-          <p>Motion-only and all-modality classifiers use lightweight heads so the comparison stays readable on a laptop and easy to audit.</p>
+          <p>Motion-only and current all-feature classifiers use lightweight heads so the comparison stays readable on a laptop and easy to audit.</p>
         </div>
         <div class="models">
           <article class="model"><h3>Motion-only action</h3><span class="score">0.9688</span><span class="meta">macro-F1, 18 classes</span></article>
-          <article class="model"><h3>All-modality action</h3><span class="score">0.9791</span><span class="meta">macro-F1, 8,378 features</span></article>
+          <article class="model"><h3>Current all-feature action</h3><span class="score">0.9791</span><span class="meta">macro-F1, 8,378 features</span></article>
           <article class="model"><h3>Motion-only subtask</h3><span class="score">0.9528</span><span class="meta">macro-F1, 14 classes</span></article>
-          <article class="model"><h3>All-modality subtask</h3><span class="score">0.9308</span><span class="meta">macro-F1, chronological caveats</span></article>
+          <article class="model"><h3>Current all-feature subtask</h3><span class="score">0.9308</span><span class="meta">macro-F1, chronological caveats</span></article>
         </div>
         <img class="chart" src="assets/charts/model_macro_f1.svg" alt="Macro-F1 comparison chart">
       </div>
@@ -594,7 +594,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>The 12 tasks share four head families.</h2>
-          <p>The diagram separates the shared episode-window feature pipeline from the task-specific heads: linear softmax, ridge regression, ridge ranking, and multi-label logistic regression.</p>
+          <p>The diagram separates the shared episode-window feature pipeline from the task-specific heads, and notes that audio remains dataset context rather than a current baseline feature block.</p>
         </div>
         <img class="architecture-image" src="assets/task_architectures.png" alt="Verified minimal architecture diagram for all 12 Ropedia episode tasks">
       </div>
@@ -614,13 +614,13 @@
           <button class="filter" data-filter="diagnostic">Diagnostic</button>
         </div>
         <div class="task-grid" id="taskGrid">
-          <article class="task-card" data-kind="supervised"><div class="task-top"><span class="task-name">timeline_action</span><span class="tag supervised">supervised</span></div><p>All modalities to current action label. Chronological split exposes unseen future actions.</p><div class="metric-row"><span>macro-F1</span><strong>0.0500</strong></div><div class="mini-bar"><span style="--w:5%;--c:#1f6c9f"></span></div></article>
-          <article class="task-card" data-kind="supervised"><div class="task-top"><span class="task-name">timeline_subtask</span><span class="tag supervised">supervised</span></div><p>All modalities to current subtask label. Useful for segmentation diagnostics.</p><div class="metric-row"><span>macro-F1</span><strong>0.0495</strong></div><div class="mini-bar"><span style="--w:5%;--c:#1f6c9f"></span></div></article>
+          <article class="task-card" data-kind="supervised"><div class="task-top"><span class="task-name">timeline_action</span><span class="tag supervised">supervised</span></div><p>All featurized modalities to current action label. Chronological split exposes unseen future actions.</p><div class="metric-row"><span>macro-F1</span><strong>0.0500</strong></div><div class="mini-bar"><span style="--w:5%;--c:#1f6c9f"></span></div></article>
+          <article class="task-card" data-kind="supervised"><div class="task-top"><span class="task-name">timeline_subtask</span><span class="tag supervised">supervised</span></div><p>All featurized modalities to current subtask label. Useful for segmentation diagnostics.</p><div class="metric-row"><span>macro-F1</span><strong>0.0495</strong></div><div class="mini-bar"><span style="--w:5%;--c:#1f6c9f"></span></div></article>
           <article class="task-card" data-kind="diagnostic"><div class="task-top"><span class="task-name">transition_detection</span><span class="tag diagnostic">diagnostic</span></div><p>Predict steady vs action boundary. Highlights task-transition localization quality.</p><div class="metric-row"><span>macro-F1</span><strong>0.6552</strong></div><div class="mini-bar"><span style="--w:65.5%;--c:#956400"></span></div></article>
           <article class="task-card" data-kind="supervised"><div class="task-top"><span class="task-name">next_action</span><span class="tag supervised">supervised</span></div><p>Current multimodal window to action 20 frames later. Tests short-horizon task flow.</p><div class="metric-row"><span>macro-F1</span><strong>0.0593</strong></div><div class="mini-bar"><span style="--w:5.9%;--c:#1f6c9f"></span></div></article>
           <article class="task-card" data-kind="forecast"><div class="task-top"><span class="task-name">hand_trajectory_forecast</span><span class="tag forecast">forecast</span></div><p>Predict future left/right hand 3D joints. Closer to imitation-learning style signals.</p><div class="metric-row"><span>MPJPE</span><strong>0.8223</strong></div><div class="mini-bar"><span style="--w:48%;--c:#346538"></span></div></article>
           <article class="task-card" data-kind="supervised"><div class="task-top"><span class="task-name">contact_prediction</span><span class="tag supervised">supervised</span></div><p>Non-contact modalities to binary contact. Degenerate in this sample because one class dominates.</p><div class="metric-row"><span>accuracy</span><strong>1.0000</strong></div><div class="mini-bar"><span style="--w:100%;--c:#346538"></span></div></article>
-          <article class="task-card" data-kind="supervised"><div class="task-top"><span class="task-name">object_relevance</span><span class="tag supervised">supervised</span></div><p>Predict relevant object set from non-caption modalities.</p><div class="metric-row"><span>micro-F1</span><strong>0.1839</strong></div><div class="mini-bar"><span style="--w:18.4%;--c:#1f6c9f"></span></div></article>
+          <article class="task-card" data-kind="supervised"><div class="task-top"><span class="task-name">object_relevance</span><span class="tag supervised">supervised</span></div><p>Predict relevant object set from non-caption feature blocks.</p><div class="metric-row"><span>micro-F1</span><strong>0.1839</strong></div><div class="mini-bar"><span style="--w:18.4%;--c:#1f6c9f"></span></div></article>
           <article class="task-card" data-kind="retrieval"><div class="task-top"><span class="task-name">caption_grounding</span><span class="tag retrieval">retrieval</span></div><p>Caption objects/interaction query to matching sensor window.</p><div class="metric-row"><span>MRR</span><strong>0.0172</strong></div><div class="mini-bar"><span style="--w:1.7%;--c:#2e7775"></span></div></article>
           <article class="task-card" data-kind="retrieval"><div class="task-top"><span class="task-name">cross_modal_retrieval</span><span class="tag retrieval">retrieval</span></div><p>Motion/IMU/camera query retrieves matching depth/video window. Strongest single-episode signal.</p><div class="metric-row"><span>top-5</span><strong>0.3764</strong></div><div class="mini-bar"><span style="--w:37.6%;--c:#2e7775"></span></div></article>
           <article class="task-card" data-kind="forecast"><div class="task-top"><span class="task-name">modality_reconstruction</span><span class="tag forecast">forecast</span></div><p>Motion/IMU/camera to depth/video feature vector.</p><div class="metric-row"><span>R2</span><strong>-0.0160</strong></div><div class="mini-bar"><span style="--w:2%;--c:#9f2f2d"></span></div></article>
@@ -661,9 +661,9 @@
         </div>
         <div class="artifact-grid">
           <article class="artifact"><h3>Task-suite report</h3><p>One JSON file with every task metric and split detail.</p><a href="https://github.com/ChaoYue0307/ropedia-episode-task-suite/blob/main/results/episode_task_suite/summary_report.json">summary_report.json</a></article>
-          <article class="artifact"><h3>Feature manifest</h3><p>Start/end index and dimension for every all-modality feature block.</p><a href="https://github.com/ChaoYue0307/ropedia-episode-task-suite/blob/main/results/episode_task_suite/feature_manifest.json">feature_manifest.json</a></article>
+          <article class="artifact"><h3>Feature manifest</h3><p>Start/end index and dimension for every current feature block.</p><a href="https://github.com/ChaoYue0307/ropedia-episode-task-suite/blob/main/results/episode_task_suite/feature_manifest.json">feature_manifest.json</a></article>
           <article class="artifact"><h3>Cross-modal retrieval</h3><p>The strongest self-supervised signal from the single episode.</p><a href="https://github.com/ChaoYue0307/ropedia-episode-task-suite/blob/main/results/episode_task_suite/cross_modal_retrieval/metrics.json">metrics.json</a></article>
-          <article class="artifact"><h3>All-modality action model</h3><p>Classifier metrics, predictions, confusion matrix, and model weights.</p><a href="https://github.com/ChaoYue0307/ropedia-episode-task-suite/blob/main/results/min_all_modalities_action_model/metrics.json">metrics.json</a></article>
+          <article class="artifact"><h3>Current all-feature action model</h3><p>Classifier metrics, predictions, confusion matrix, and model weights.</p><a href="https://github.com/ChaoYue0307/ropedia-episode-task-suite/blob/main/results/min_all_modalities_action_model/metrics.json">metrics.json</a></article>
           <article class="artifact"><h3>Windows table</h3><p>Window start/end frames and aligned action/subtask labels.</p><a href="https://github.com/ChaoYue0307/ropedia-episode-task-suite/blob/main/results/episode_task_suite/windows.csv">windows.csv</a></article>
           <article class="artifact"><h3>Reproduction scripts</h3><p>Three training scripts plus the dashboard generator.</p><a href="https://github.com/ChaoYue0307/ropedia-episode-task-suite/tree/main/scripts">scripts/</a></article>
           <article class="artifact"><h3>Hugging Face Space</h3><p>The same dashboard packaged as a public static Space.</p><a href="https://huggingface.co/spaces/cy0307/ropedia-episode-task-suite">cy0307/ropedia-episode-task-suite</a></article>

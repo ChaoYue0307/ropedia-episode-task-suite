@@ -16,7 +16,7 @@
 <rect x="410" y="122" width="8" height="110" rx="4" fill="#008b9a"/>
 <text x="434" y="153" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#10141f">Feature vector</text>
 <text x="434" y="180" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#394255">X_all = 8,378 dimensions</text>
-<text x="434" y="198" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#394255">17 named modality blocks</text>
+<text x="434" y="198" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#394255">17 named blocks; no audio block</text>
 <text x="434" y="216" font-family="Arial, sans-serif" font-size="13" font-weight="500" fill="#394255">mean/std fit on train only</text>
 <rect x="760" y="122" width="320" height="110" rx="8" fill="#ffffff" stroke="#dce2ec" stroke-width="2"/>
 <rect x="760" y="122" width="8" height="110" rx="4" fill="#0a7f55"/>

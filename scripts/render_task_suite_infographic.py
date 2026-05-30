@@ -79,11 +79,12 @@ GROUPS = [
 
 MODALITIES = [
     ("video", "6 camera streams", "fisheye + stereo"),
-    ("depth", "confidence maps", "spatial geometry"),
-    ("3D / SLAM", "point-cloud summaries", "scene structure"),
-    ("IMU", "accel + gyro", "body motion"),
-    ("hands", "future joints", "embodied action"),
-    ("text", "objects + captions", "semantic grounding"),
+    ("audio", "AAC stream in MP4", "documented, not featurized"),
+    ("depth", "depth + confidence", "spatial geometry"),
+    ("pose / SLAM", "camera trajectory", "position + orientation"),
+    ("motion capture", "body + hand joints", "mocap features"),
+    ("inertial", "accel + gyro", "wearable motion"),
+    ("language", "objects + captions", "annotation text"),
 ]
 
 HAND_EDGES = [
@@ -206,6 +207,63 @@ def depth_thumb(h5) -> str:
     return image_data_uri(canvas, "JPEG")
 
 
+def audio_thumb(sample_dir: Path) -> str:
+    import numpy as np
+    from PIL import ImageDraw
+
+    canvas = make_canvas()
+    draw = ImageDraw.Draw(canvas, "RGBA")
+    try:
+        raw = subprocess.run(
+            [
+                "ffmpeg",
+                "-v",
+                "error",
+                "-ss",
+                "45",
+                "-t",
+                "6",
+                "-i",
+                str(sample_dir / "fisheye_cam0.mp4"),
+                "-ac",
+                "1",
+                "-ar",
+                "16000",
+                "-f",
+                "s16le",
+                "pipe:1",
+            ],
+            check=True,
+            stdout=subprocess.PIPE,
+        ).stdout
+        samples = np.frombuffer(raw, dtype=np.int16).astype(np.float32)
+        if len(samples) == 0:
+            raise RuntimeError("empty audio stream")
+        samples = samples / max(float(np.max(np.abs(samples))), 1.0)
+        bins = 180
+        trimmed = samples[: bins * max(1, len(samples) // bins)]
+        chunks = np.array_split(trimmed, bins)
+        rms = np.array([np.sqrt(np.mean(chunk * chunk)) if len(chunk) else 0.0 for chunk in chunks])
+        waveform = np.array([float(np.mean(chunk)) if len(chunk) else 0.0 for chunk in chunks])
+        for i, value in enumerate(rms):
+            x = 18 + i / max(bins - 1, 1) * (THUMB_WIDTH - 36)
+            h = 8 + np.clip(value * 86, 0, 86)
+            draw.line((x, 126, x, 126 - h), fill=(31, 108, 159, 150), width=2)
+        points = []
+        for i, value in enumerate(waveform):
+            x = 18 + i / max(bins - 1, 1) * (THUMB_WIDTH - 36)
+            y = 74 - np.clip(value, -1, 1) * 42
+            points.append((x, y))
+        draw.line(points, fill=(155, 101, 22, 210), width=2)
+    except Exception:
+        for i in range(48):
+            x = 22 + i * 8
+            h = 16 + (i % 7) * 7
+            draw.rounded_rectangle((x, 128 - h, x + 4, 128), radius=2, fill=(31, 108, 159, 150))
+    draw_label(draw, (16, 12), "AAC audio waveform", fill=(31, 36, 33), size=17)
+    return image_data_uri(canvas, "PNG")
+
+
 def normalize_points(points, width, height, pad=16):
     import numpy as np
 
@@ -242,7 +300,7 @@ def slam_thumb(h5) -> str:
     traj_xy = normalize_points(traj[:, [0, 2, 1]], THUMB_WIDTH, THUMB_HEIGHT)
     for a, b in zip(traj_xy[:-1], traj_xy[1:]):
         draw.line((a[0], a[1], b[0], b[1]), fill=(31, 108, 159, 190), width=2)
-    draw_label(draw, (16, 14), "SLAM point cloud + pose", fill=(31, 36, 33), size=17)
+    draw_label(draw, (16, 14), "camera pose + SLAM map", fill=(31, 36, 33), size=17)
     return image_data_uri(canvas, "PNG")
 
 
@@ -272,37 +330,44 @@ def imu_thumb(h5) -> str:
             y = 138 - np.clip(v, 0, 1) * 112
             pts.append((x, y))
         draw.line(pts, fill=color + (200,), width=2)
-    draw_label(draw, (16, 12), "accel / gyro traces", fill=(31, 36, 33), size=17)
+    draw_label(draw, (16, 12), "inertial accel / gyro", fill=(31, 36, 33), size=17)
     return image_data_uri(canvas, "PNG")
 
 
-def hands_thumb(h5) -> str:
+def mocap_thumb(h5) -> str:
     import numpy as np
     from PIL import ImageDraw
 
     canvas = make_canvas()
     draw = ImageDraw.Draw(canvas, "RGBA")
+    body = np.array(h5["full_body_mocap/keypoints"][2450], dtype=np.float32)
     left = np.array(h5["hand_mocap/left_joints_3d"][2450], dtype=np.float32)
     right = np.array(h5["hand_mocap/right_joints_3d"][2450], dtype=np.float32)
-    all_points = np.concatenate([left, right], axis=0)
+    all_points = np.concatenate([body, left, right], axis=0)
     lo = np.percentile(all_points[:, :2], 2, axis=0)
     hi = np.percentile(all_points[:, :2], 98, axis=0)
     span = np.maximum(hi - lo, 1e-6)
 
-    def project(points, x_offset):
+    def project(points, x_offset, width):
         xy = (points[:, :2] - lo) / span
         xy[:, 1] = 1 - xy[:, 1]
-        xy[:, 0] = x_offset + xy[:, 0] * 150
+        xy[:, 0] = x_offset + xy[:, 0] * width
         xy[:, 1] = 26 + xy[:, 1] * 108
         return xy
 
-    for points, x_offset, color in [(left, 28, (31, 108, 159)), (right, 224, (155, 101, 22))]:
-        xy = project(points, x_offset)
+    body_xy = project(body, 18, 165)
+    for x, y in body_xy:
+        draw.ellipse((x - 2.4, y - 2.4, x + 2.4, y + 2.4), fill=(52, 101, 56, 175))
+    for a, b in zip(body_xy[:-1], body_xy[1:]):
+        draw.line((a[0], a[1], b[0], b[1]), fill=(52, 101, 56, 70), width=1)
+
+    for points, x_offset, color in [(left, 218, (31, 108, 159)), (right, 314, (155, 101, 22))]:
+        xy = project(points, x_offset, 82)
         for a, b in HAND_EDGES:
-            draw.line((xy[a][0], xy[a][1], xy[b][0], xy[b][1]), fill=color + (185,), width=3)
+            draw.line((xy[a][0], xy[a][1], xy[b][0], xy[b][1]), fill=color + (180,), width=2)
         for x, y in xy:
-            draw.ellipse((x - 3, y - 3, x + 3, y + 3), fill=color + (230,))
-    draw_label(draw, (16, 12), "left / right 3D hand joints", fill=(31, 36, 33), size=17)
+            draw.ellipse((x - 2.4, y - 2.4, x + 2.4, y + 2.4), fill=color + (220,))
+    draw_label(draw, (16, 12), "body + hand mocap", fill=(31, 36, 33), size=17)
     return image_data_uri(canvas, "PNG")
 
 
@@ -318,7 +383,7 @@ def text_thumb(h5) -> str:
     actions = [a.get("label", "") for a in segment.get("Current Action", [])][:2]
     canvas = make_canvas()
     draw = ImageDraw.Draw(canvas, "RGBA")
-    draw_label(draw, (16, 13), data["config"].get("Main Task", "caption"), fill=(31, 36, 33), size=17)
+    draw_label(draw, (16, 13), "language annotation", fill=(31, 36, 33), size=17)
     y = 46
     for label in objects:
         draw.rounded_rectangle((16, y, 16 + 20 + len(label) * 8, y + 24), radius=6, fill=(251, 243, 219, 230), outline=(226, 200, 144, 255))
@@ -344,14 +409,14 @@ def load_sample_thumbnails(sample_dir: Path | None) -> dict[str, str]:
     try:
         import h5py
 
-        thumbnails = {"video": video_thumb(sample_dir)}
+        thumbnails = {"video": video_thumb(sample_dir), "audio": audio_thumb(sample_dir)}
         with h5py.File(hdf5_path, "r") as h5:
             thumbnails.update({
                 "depth": depth_thumb(h5),
-                "3D / SLAM": slam_thumb(h5),
-                "IMU": imu_thumb(h5),
-                "hands": hands_thumb(h5),
-                "text": text_thumb(h5),
+                "pose / SLAM": slam_thumb(h5),
+                "motion capture": mocap_thumb(h5),
+                "inertial": imu_thumb(h5),
+                "language": text_thumb(h5),
             })
         return thumbnails
     except Exception as exc:
@@ -389,13 +454,13 @@ def metric_for(task_name: str, metrics: dict) -> tuple[str, str]:
 
 def short_io(task_name: str, metrics: dict) -> str:
     custom = {
-        "timeline_action": "all modalities -> current action label",
-        "timeline_subtask": "all modalities -> current subtask label",
-        "transition_detection": "all modalities -> boundary vs steady",
+        "timeline_action": "all featurized modalities -> action label",
+        "timeline_subtask": "all featurized modalities -> subtask label",
+        "transition_detection": "all featurized modalities -> boundary vs steady",
         "next_action": "window at t -> action at t+20 frames",
-        "hand_trajectory_forecast": "all modalities -> future hand joints",
+        "hand_trajectory_forecast": "all featurized modalities -> future hand joints",
         "contact_prediction": "non-contact modalities -> contact state",
-        "object_relevance": "non-caption modalities -> relevant objects",
+        "object_relevance": "non-caption feature blocks -> relevant objects",
         "caption_grounding": "text query -> matching sensor window",
         "cross_modal_retrieval": "motion / IMU / camera -> depth / video match",
         "modality_reconstruction": "motion / IMU / camera -> depth / video vector",
@@ -611,8 +676,8 @@ def build_html(summary: dict, base_image: Path | None, sample_dir: Path | None) 
     }}
     .modalities {{
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 12px;
     }}
     .modality {{
       min-height: 204px;
@@ -646,14 +711,14 @@ def build_html(summary: dict, base_image: Path | None, sample_dir: Path | None) 
     }}
     .modality h3 {{
       margin: 8px 0 0;
-      font-size: 22px;
+      font-size: 19px;
       line-height: 1;
       text-transform: uppercase;
     }}
     .modality p {{
       margin: 9px 0 0;
       color: #4f565f;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 650;
     }}
     .modality span {{
@@ -845,17 +910,17 @@ def build_html(summary: dict, base_image: Path | None, sample_dir: Path | None) 
     </header>
 
     <div class="section-label">
-      <span>input modalities</span>
-      <span>all signals align to the same sliding-window contract</span>
+      <span>Xperience-10M modalities</span>
+      <span>audio is present in the sample MP4 stream; the current 8,378-d baseline manifest does not featurize it</span>
     </div>
     <section class="modalities">{modalities_html}</section>
 
     <section class="shared-band" aria-label="shared processing contract">
-      <div class="step"><strong>raw public episode</strong><span>videos, depth, motion, IMU, text</span></div>
+      <div class="step"><strong>raw public episode</strong><span>video, audio, depth, pose, mocap, IMU, language</span></div>
       <div class="arrow">-></div>
       <div class="step"><strong>20-frame windows</strong><span>stride 5, chronological order</span></div>
       <div class="arrow">-></div>
-      <div class="step"><strong>8,378-d vector</strong><span>explicit feature manifest</span></div>
+      <div class="step"><strong>8,378-d vector</strong><span>current manifest excludes audio features</span></div>
       <div class="arrow">-></div>
       <div class="step"><strong>12 minimal heads</strong><span>softmax, ridge, logistic</span></div>
     </section>

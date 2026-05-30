@@ -15,14 +15,14 @@
 <rect x="60" y="110" width="8" height="132" rx="4" fill="#1f63e9"/>
 <text x="84" y="144" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#10141f">1. Raw public sample</text>
 <text x="84" y="176" font-family="Arial, sans-serif" font-size="14" fill="#394255">annotation.hdf5</text>
-<text x="84" y="198" font-family="Arial, sans-serif" font-size="14" fill="#394255">6 video files</text>
+<text x="84" y="198" font-family="Arial, sans-serif" font-size="14" fill="#394255">6 MP4 videos with audio</text>
 <text x="84" y="220" font-family="Arial, sans-serif" font-size="14" fill="#394255">5,821 aligned frames</text>
 <rect x="365" y="110" width="250" height="132" rx="8" fill="#ffffff" stroke="#dce2ec" stroke-width="2"/>
 <rect x="365" y="110" width="8" height="132" rx="4" fill="#008b9a"/>
 <text x="389" y="144" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#10141f">2. HOMIE loader</text>
-<text x="389" y="176" font-family="Arial, sans-serif" font-size="14" fill="#394255">mocap, IMU, depth</text>
-<text x="389" y="198" font-family="Arial, sans-serif" font-size="14" fill="#394255">caption map</text>
-<text x="389" y="220" font-family="Arial, sans-serif" font-size="14" fill="#394255">SLAM and calibration</text>
+<text x="389" y="176" font-family="Arial, sans-serif" font-size="14" fill="#394255">video, depth, pose</text>
+<text x="389" y="198" font-family="Arial, sans-serif" font-size="14" fill="#394255">mocap, IMU, language</text>
+<text x="389" y="220" font-family="Arial, sans-serif" font-size="14" fill="#394255">audio not featurized</text>
 <rect x="670" y="110" width="250" height="132" rx="8" fill="#ffffff" stroke="#dce2ec" stroke-width="2"/>
 <rect x="670" y="110" width="8" height="132" rx="4" fill="#0a7f55"/>
 <text x="694" y="144" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#10141f">3. Window builder</text>
@@ -33,13 +33,13 @@
 <rect x="975" y="110" width="8" height="132" rx="4" fill="#b65b04"/>
 <text x="999" y="144" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#10141f">4. Feature vector</text>
 <text x="999" y="176" font-family="Arial, sans-serif" font-size="14" fill="#394255">8,378 dimensions</text>
-<text x="999" y="198" font-family="Arial, sans-serif" font-size="14" fill="#394255">17 named feature blocks</text>
+<text x="999" y="198" font-family="Arial, sans-serif" font-size="14" fill="#394255">17 named blocks, no audio block</text>
 <text x="999" y="220" font-family="Arial, sans-serif" font-size="14" fill="#394255">stored manifest</text>
 <rect x="60" y="380" width="360" height="168" rx="8" fill="#ffffff" stroke="#dce2ec" stroke-width="2"/>
 <rect x="60" y="380" width="8" height="168" rx="4" fill="#1f63e9"/>
 <text x="84" y="414" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#10141f">5. Baseline models</text>
 <text x="84" y="446" font-family="Arial, sans-serif" font-size="14" fill="#394255">motion-only action/subtask</text>
-<text x="84" y="468" font-family="Arial, sans-serif" font-size="14" fill="#394255">all-modality action/subtask</text>
+<text x="84" y="468" font-family="Arial, sans-serif" font-size="14" fill="#394255">current all-feature action/subtask</text>
 <text x="84" y="490" font-family="Arial, sans-serif" font-size="14" fill="#394255">numpy softmax classifier</text>
 <text x="84" y="512" font-family="Arial, sans-serif" font-size="14" fill="#394255">metrics and predictions</text>
 <rect x="520" y="380" width="360" height="168" rx="8" fill="#ffffff" stroke="#dce2ec" stroke-width="2"/>
@@ -58,6 +58,7 @@
 <text x="1004" y="512" font-family="Arial, sans-serif" font-size="14" fill="#394255">reproducibility audit</text>
 <rect x="60" y="620" width="1220" height="96" rx="8" fill="#f8fafc" stroke="#dce2ec"/>
 <text x="84" y="650" font-family="Arial, sans-serif" font-size="15" fill="#273143">Audit check: rerunning scripts to /private/tmp reproduced committed metrics exactly.</text>
-<text x="84" y="674" font-family="Arial, sans-serif" font-size="15" fill="#273143">Video/depth check: fresh cache read depth plus fisheye_cam0/1/2/3 and stereo_left/right from raw files.</text>
-<text x="84" y="698" font-family="Arial, sans-serif" font-size="15" fill="#273143">Scope check: this validates one public sample episode, not cross-episode generalization.</text>
+<text x="84" y="674" font-family="Arial, sans-serif" font-size="15" fill="#273143">Modality check: sample covers video, AAC audio, depth, pose/SLAM, mocap, IMU, and language annotation.</text>
+<text x="84" y="698" font-family="Arial, sans-serif" font-size="15" fill="#273143">Feature check: current manifest has video/depth/pose/mocap/IMU/language blocks, but no audio block.</text>
+<text x="84" y="722" font-family="Arial, sans-serif" font-size="15" fill="#273143">Scope check: this validates one public sample episode, not cross-episode generalization.</text>
 </svg>

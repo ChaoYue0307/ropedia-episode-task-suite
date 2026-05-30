@@ -99,14 +99,14 @@ def build_pipeline_html(summary: dict, base_path: Path) -> str:
             stage_card(
                 "01",
                 "Raw public sample",
-                ["annotation.hdf5", "6 camera videos", f"{suite['num_frames']:,} aligned frames"],
+                ["annotation.hdf5", "6 MP4 videos with audio", f"{suite['num_frames']:,} aligned frames"],
                 COLORS["blue"],
             ),
             arrow(),
             stage_card(
                 "02",
                 "HOMIE loader",
-                ["mocap, hands, IMU", "depth and confidence", "SLAM + calibration"],
+                ["video, depth, pose", "mocap, IMU, language", "audio noted, not featurized"],
                 COLORS["teal"],
             ),
             arrow(),
@@ -124,7 +124,7 @@ def build_pipeline_html(summary: dict, base_path: Path) -> str:
             stage_card(
                 "04",
                 "Feature vector",
-                [f"{suite['feature_dim']:,} dimensions", "17 named blocks", "manifested slice indices"],
+                [f"{suite['feature_dim']:,} dimensions", "17 named blocks, no audio block", "manifested slice indices"],
                 COLORS["orange"],
             ),
         ],
@@ -132,7 +132,7 @@ def build_pipeline_html(summary: dict, base_path: Path) -> str:
             stage_card(
                 "05",
                 "Baseline models",
-                ["motion-only classifiers", "all-modality classifiers", "stored weights + predictions"],
+                ["motion-only classifiers", "current all-feature classifiers", "stored weights + predictions"],
                 COLORS["blue"],
             ),
             arrow(),
@@ -154,7 +154,8 @@ def build_pipeline_html(summary: dict, base_path: Path) -> str:
     rows_html = "".join(f'<section class="flow-row">{"".join(row)}</section>' for row in stage_rows)
     checks = [
         "Audit check: rerunning scripts to /private/tmp reproduced the committed metrics exactly.",
-        "Video/depth check: fresh cache read depth plus fisheye_cam0/1/2/3 and stereo_left/right from raw files.",
+        "Modality check: sample covers video, AAC audio, depth, pose/SLAM, mocap, IMU, and language annotation.",
+        "Feature check: current baseline manifest has video/depth/pose/mocap/IMU/language blocks, but no audio feature block.",
         "Scope check: this validates one public sample episode, not cross-episode generalization.",
     ]
     checks_html = "".join(f"<li>{esc(line)}</li>" for line in checks)
@@ -356,7 +357,7 @@ def build_pipeline_html(summary: dict, base_path: Path) -> str:
         <div>
           <div class="kicker">verified single-episode pipeline</div>
           <h1>From Ropedia episode to reproducible artifacts</h1>
-          <p class="subtitle">The figure follows the actual code path: raw multimodal sample data, aligned windows, feature vectors, minimal heads, and published metrics.</p>
+          <p class="subtitle">The figure follows the actual code path and separates the full Xperience-10M sample modalities from the current baseline feature manifest.</p>
         </div>
         <div class="metrics">
           <div class="metric"><strong>{suite['num_frames']:,}</strong><span>frames</span></div>
@@ -699,8 +700,8 @@ def build_architecture_html(summary: dict, base_path: Path) -> str:
         <div class="summary-pill"><strong>{len(suite['tasks'])}</strong><span>end-to-end tasks</span></div>
       </header>
       <section class="shared">
-        <article><h2>Shared windows</h2><p>{suite['num_frames']:,} frames to {suite['num_windows']:,} windows, {suite['window_frames']}-frame context, {suite['stride_frames']}-frame stride.</p></article>
-        <article><h2>Feature vector</h2><p>X_all is {suite['feature_dim']:,} dimensions with 17 named modality blocks and train-fit standardization.</p></article>
+        <article><h2>Shared windows</h2><p>{suite['num_frames']:,} frames to {suite['num_windows']:,} windows over video, depth, pose, mocap, inertial, and language features.</p></article>
+        <article><h2>Feature vector</h2><p>X_all is {suite['feature_dim']:,} dimensions with 17 named blocks; sample audio is documented but not featurized here.</p></article>
         <article><h2>Reusable heads</h2><p>Softmax, ridge, ridge ranking, and multi-label logistic heads cover the whole suite.</p></article>
         <article><h2>Artifacts</h2><p>Metrics, predictions, models, manifests, and the source summary report are committed.</p></article>
       </section>

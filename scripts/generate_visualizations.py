@@ -65,7 +65,7 @@ def svg_bar_chart(path: Path, title: str, rows: list[tuple[str, float]], x_label
 
 def svg_feature_blocks(path: Path, feature_manifest: list[dict]) -> None:
     rows = [(block["name"], float(block["dim"])) for block in feature_manifest]
-    svg_bar_chart(path, "All-Modality Feature Blocks", rows, x_label="feature dimensions", max_value=max(v for _, v in rows) * 1.08)
+    svg_bar_chart(path, "Current Extracted Feature Blocks", rows, x_label="feature dimensions", max_value=max(v for _, v in rows) * 1.08)
 
 
 def svg_pipeline_diagram(path: Path, summary: dict) -> None:
@@ -76,13 +76,13 @@ def svg_pipeline_diagram(path: Path, summary: dict) -> None:
     boxes = [
         (60, 110, 250, 132, "1. Raw public sample", [
             "annotation.hdf5",
-            "6 video files",
+            "6 MP4 videos with audio",
             f"{suite['num_frames']:,} aligned frames",
         ], "#1f63e9"),
         (365, 110, 250, 132, "2. HOMIE loader", [
-            "mocap, IMU, depth",
-            "caption map",
-            "SLAM and calibration",
+            "video, depth, pose",
+            "mocap, IMU, language",
+            "audio not featurized",
         ], "#008b9a"),
         (670, 110, 250, 132, "3. Window builder", [
             f"{suite['window_frames']}-frame windows",
@@ -91,12 +91,12 @@ def svg_pipeline_diagram(path: Path, summary: dict) -> None:
         ], "#0a7f55"),
         (975, 110, 300, 132, "4. Feature vector", [
             f"{suite['feature_dim']:,} dimensions",
-            "17 named feature blocks",
+            "17 named blocks, no audio block",
             "stored manifest",
         ], "#b65b04"),
         (60, 380, 360, 168, "5. Baseline models", [
             "motion-only action/subtask",
-            "all-modality action/subtask",
+            "current all-feature action/subtask",
             "numpy softmax classifier",
             "metrics and predictions",
         ], "#1f63e9"),
@@ -140,7 +140,8 @@ def svg_pipeline_diagram(path: Path, summary: dict) -> None:
             parts.append(f'<text x="{x + 24}" y="{y + 66 + i * 22}" font-family="Arial, sans-serif" font-size="14" fill="#394255">{html.escape(line)}</text>')
     checks = [
         "Audit check: rerunning scripts to /private/tmp reproduced committed metrics exactly.",
-        "Video/depth check: fresh cache read depth plus fisheye_cam0/1/2/3 and stereo_left/right from raw files.",
+        "Modality check: sample covers video, AAC audio, depth, pose/SLAM, mocap, IMU, and language annotation.",
+        "Feature check: current manifest has video/depth/pose/mocap/IMU/language blocks, but no audio block.",
         "Scope check: this validates one public sample episode, not cross-episode generalization.",
     ]
     parts.append('<rect x="60" y="620" width="1220" height="96" rx="8" fill="#f8fafc" stroke="#dce2ec"/>')
@@ -335,7 +336,7 @@ def svg_task_architectures(path: Path, summary: dict) -> None:
         ], "#1f63e9"),
         (410, 122, 310, 110, "Feature vector", [
             f"X_all = {suite['feature_dim']:,} dimensions",
-            "17 named modality blocks",
+            "17 named blocks; no audio block",
             "mean/std fit on train only",
         ], "#008b9a"),
         (760, 122, 320, 110, "Reusable heads", [
@@ -426,9 +427,9 @@ def generate_charts(summary: dict) -> None:
     svg_task_architectures(ASSETS / "task_architectures.svg", summary)
     model_rows = [
         ("Motion-only action macro-F1", summary["models"]["motion_action"]["macro_f1"]),
-        ("All-modality action macro-F1", summary["models"]["all_modalities_action"]["macro_f1"]),
+        ("Current all-feature action macro-F1", summary["models"]["all_modalities_action"]["macro_f1"]),
         ("Motion-only subtask macro-F1", summary["models"]["motion_subtask"]["macro_f1"]),
-        ("All-modality subtask macro-F1", summary["models"]["all_modalities_subtask"]["macro_f1"]),
+        ("Current all-feature subtask macro-F1", summary["models"]["all_modalities_subtask"]["macro_f1"]),
     ]
     svg_bar_chart(CHARTS / "model_macro_f1.svg", "Minimal Model Macro-F1 Comparison", model_rows, max_value=1.0)
 

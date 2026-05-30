@@ -11,11 +11,25 @@ Xperience-10M sample episode.
 The project does one narrow thing carefully: it turns a raw multimodal episode
 into:
 
-- all-modality sliding-window features,
-- motion-only and all-modality baseline models,
+- manifested sliding-window features over the currently extracted modalities,
+- motion-only and current all-feature baseline models,
 - 12 end-to-end episode-level tasks,
 - metrics, predictions, model weights, manifests, charts, and a static website,
 - a clear explanation of what a single episode can and cannot prove.
+
+## Dataset Modality Coverage
+
+The Xperience-10M sample is a 4D multimodal episode source spanning video,
+audio, depth, pose, motion capture, inertial sensing, and language annotation.
+This repo keeps that distinction explicit:
+
+- the raw sample files include six MP4 video streams with AAC audio streams,
+- `annotation.hdf5` includes depth, SLAM/camera pose, hand/body mocap, IMU, and
+  language annotation,
+- the current minimal 8,378-d baseline feature manifest includes video, depth,
+  pose/SLAM, mocap, IMU, calibration, and language blocks,
+- audio is documented in the figures but is not yet extracted as a model input
+  feature block in this minimal baseline.
 
 Start with the visual dashboard:
 
@@ -83,7 +97,7 @@ over many episodes and split train/test by held-out episode.
 ```text
 scripts/
   train_min_action_model.py         # motion/IMU baseline
-  train_all_modalities_model.py     # all-modality lightweight baseline
+  train_all_modalities_model.py     # current all-feature lightweight baseline
   episode_task_suite.py             # 12 end-to-end task definitions
   generate_visualizations.py        # refreshes SVG charts + summary JSON
   render_task_suite_infographic.py  # renders the ChatGPT-image-backed PNG
@@ -92,8 +106,8 @@ scripts/
 results/
   min_action_model/                 # motion-only action baseline artifacts
   min_subtask_model/                # motion-only subtask baseline artifacts
-  min_all_modalities_action_model/  # all-modality action artifacts
-  min_all_modalities_subtask_model/ # all-modality subtask artifacts
+  min_all_modalities_action_model/  # current all-feature action artifacts
+  min_all_modalities_subtask_model/ # current all-feature subtask artifacts
   episode_task_suite/               # 12-task suite metrics and predictions
 
 docs/
@@ -193,30 +207,31 @@ models.
 Shared setup:
 
 ```text
-raw episode -> 20-frame windows, stride 5 -> 8,378-d all-modality vector
+raw episode -> 20-frame windows, stride 5 -> 8,378-d current feature vector
 chronological split: first 70% train, last 30% test
 scalers are fit on train windows only
 ```
 
-There are three reusable head families:
+There are four reusable head families:
 
 | Head family | Used by | What it means |
 | --- | --- | --- |
 | Linear softmax classifier | `timeline_action`, `timeline_subtask`, `transition_detection`, `next_action`, `contact_prediction`, `temporal_order`, `misalignment_detection` | z-score features, then `XW+b`, softmax, cross-entropy, L2 |
-| Dual ridge regression/projection | `hand_trajectory_forecast`, `caption_grounding`, `cross_modal_retrieval`, `modality_reconstruction` | z-score input/target, solve ridge regression with L2=10 |
+| Dual ridge regression/projection | `hand_trajectory_forecast`, `modality_reconstruction` | z-score input/target, solve ridge regression with L2=10 |
+| Ridge + cosine ranking | `caption_grounding`, `cross_modal_retrieval` | project one modality into another feature space, then rank candidates by cosine |
 | Multi-label logistic regression | `object_relevance` | z-score non-caption features, sigmoid object heads, threshold at 0.5 |
 
 The task-specific heads are:
 
 | Task | Input | Minimal head | Output |
 | --- | --- | --- | --- |
-| `timeline_action` | all modalities | linear softmax | current action class |
-| `timeline_subtask` | all modalities | linear softmax | current subtask class |
-| `transition_detection` | all modalities | linear softmax | steady vs action boundary |
-| `next_action` | all modalities at `t` | linear softmax | action at `t+20` frames |
-| `hand_trajectory_forecast` | all modalities at `t` | ridge regression | future 10-frame left/right hand joints |
-| `contact_prediction` | non-contact and non-caption modalities | linear softmax | any body contact |
-| `object_relevance` | non-caption modalities | multi-label logistic | relevant object set |
+| `timeline_action` | all featurized modalities | linear softmax | current action class |
+| `timeline_subtask` | all featurized modalities | linear softmax | current subtask class |
+| `transition_detection` | all featurized modalities | linear softmax | steady vs action boundary |
+| `next_action` | all featurized modalities at `t` | linear softmax | action at `t+20` frames |
+| `hand_trajectory_forecast` | all featurized modalities at `t` | ridge regression | future 10-frame left/right hand joints |
+| `contact_prediction` | non-contact and non-caption feature blocks | linear softmax | any body contact |
+| `object_relevance` | non-caption feature blocks | multi-label logistic | relevant object set |
 | `caption_grounding` | sensor windows projected to text space | ridge projection + cosine ranking | matching time window for text query |
 | `cross_modal_retrieval` | motion/IMU/camera projected to visual space | ridge projection + cosine ranking | matching depth/video window |
 | `modality_reconstruction` | motion/IMU/camera | ridge regression | depth/video feature vector |
@@ -228,9 +243,9 @@ The task-specific heads are:
 | Experiment | Main score | Accuracy | Notes |
 | --- | ---: | ---: | --- |
 | Motion-only action | 0.9688 macro-F1 | 0.9828 | Uses motion/IMU features only |
-| All-modality action | 0.9791 macro-F1 | 0.9828 | 8,378-dimensional feature vector |
+| Current all-feature action | 0.9791 macro-F1 | 0.9828 | 8,378-dimensional feature vector |
 | Motion-only subtask | 0.9528 macro-F1 | 0.9759 | Strong within-episode subtask signal |
-| All-modality subtask | 0.9308 macro-F1 | 0.9828 | High accuracy, lower class-balanced score |
+| Current all-feature subtask | 0.9308 macro-F1 | 0.9828 | High accuracy, lower class-balanced score |
 | Cross-modal retrieval | 0.3764 top-5 | n/a | Motion/IMU/camera retrieves matching depth/video |
 | Transition detection | 0.6552 macro-F1 | 0.9253 | Boundary F1 is 0.2143 |
 | Hand trajectory forecast | 0.8223 MPJPE | n/a | Predicts future hand-joint trajectory |
@@ -262,9 +277,9 @@ The test segment contains some action/subtask labels never seen during training.
 Timeline and next-action classifiers therefore expose the core limitation of
 single-episode learning instead of hiding it behind random splits.
 
-## Modalities Used
+## Feature Blocks Used
 
-The all-modality vector has 8,378 dimensions and includes:
+The current feature vector has 8,378 dimensions and includes:
 
 - hand/body mocap joints and contact labels,
 - camera translation and rotation,
@@ -274,6 +289,8 @@ The all-modality vector has 8,378 dimensions and includes:
 - caption/object/interaction text features,
 - SLAM point-cloud summary features,
 - calibration parameters.
+
+It does not yet include an audio feature block.
 
 The exact feature block boundaries are stored in
 [`results/episode_task_suite/feature_manifest.json`](results/episode_task_suite/feature_manifest.json).

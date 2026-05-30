@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="726" viewBox="0 0 1100 726">
 <rect width="100%" height="100%" fill="#ffffff"/>
-<text x="32" y="42" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#111827">All-Modality Feature Blocks</text>
+<text x="32" y="42" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#111827">Current Extracted Feature Blocks</text>
 <text x="310" y="702" font-family="Arial, sans-serif" font-size="13" fill="#6b7280">feature dimensions</text>
 <line x1="310.0" y1="60" x2="310.0" y2="676" stroke="#e5e7eb" stroke-width="1"/>
 <text x="310.0" y="696" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">0.00</text>
