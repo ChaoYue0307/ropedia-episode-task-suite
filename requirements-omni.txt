@@ -1,0 +1,10 @@
+-r requirements.txt
+torch
+torchvision
+accelerate
+peft
+transformers
+datasets
+qwen-omni-utils
+soundfile
+librosa

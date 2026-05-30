@@ -1,0 +1,66 @@
+{
+  "summary": {
+    "num_episodes": 1,
+    "total_bytes": 2021338279,
+    "train_minimal_bytes": 2021338279,
+    "notes": [
+      "train_minimal_bytes excludes visualization.rrd because model training does not need it.",
+      "This file is metadata-only; it does not copy or download raw data."
+    ]
+  },
+  "episodes": [
+    {
+      "episode_id": "xperience-10m-sample",
+      "path": "/home/cy/Ropedia/modelscope_data/xperience-10m-sample",
+      "annotation": "/home/cy/Ropedia/modelscope_data/xperience-10m-sample/annotation.hdf5",
+      "files": [
+        {
+          "name": "annotation.hdf5",
+          "bytes": 1931496028,
+          "exists": true
+        },
+        {
+          "name": "fisheye_cam0.mp4",
+          "bytes": 89842251,
+          "exists": true
+        },
+        {
+          "name": "fisheye_cam1.mp4",
+          "bytes": 0,
+          "exists": false
+        },
+        {
+          "name": "fisheye_cam2.mp4",
+          "bytes": 0,
+          "exists": false
+        },
+        {
+          "name": "fisheye_cam3.mp4",
+          "bytes": 0,
+          "exists": false
+        },
+        {
+          "name": "stereo_left.mp4",
+          "bytes": 0,
+          "exists": false
+        },
+        {
+          "name": "stereo_right.mp4",
+          "bytes": 0,
+          "exists": false
+        },
+        {
+          "name": "visualization.rrd",
+          "bytes": 0,
+          "exists": false
+        }
+      ],
+      "total_bytes": 2021338279,
+      "train_minimal_bytes": 2021338279,
+      "has_annotation": true,
+      "has_any_video": true,
+      "has_all_videos": false,
+      "has_rrd": false
+    }
+  ]
+}

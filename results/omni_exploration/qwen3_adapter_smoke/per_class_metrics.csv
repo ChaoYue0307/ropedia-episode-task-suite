@@ -1,0 +1,19 @@
+class_id,class_name,support,predicted,precision,recall,f1
+0,Pick up kettle,0,3,0.0,0.0,0.0
+1,Position kettle to pour,0,0,0.0,0.0,0.0
+2,Move kettle,0,0,0.0,0.0,0.0
+3,Hold coffee carafe,0,0,0.0,0.0,0.0
+4,Grasp coffee scoop,0,6,0.0,0.0,0.0
+5,Transfer coffee to dripper,0,0,0.0,0.0,0.0
+6,Hold gooseneck kettle,0,3,0.0,0.0,0.0
+7,Grasp gooseneck kettle,0,2,0.0,0.0,0.0
+8,Lift gooseneck kettle,0,0,0.0,0.0,0.0
+9,Move kettle away,0,0,0.0,0.0,0.0
+10,Place kettle on table,0,0,0.0,0.0,0.0
+11,Pick up white bottle,0,0,0.0,0.0,0.0
+12,Pour liquid from white bottle,0,2,0.0,0.0,0.0
+13,Close bottle cap,3,2,0.0,0.0,0.0
+14,Place item on table,2,0,0.0,0.0,0.0
+15,Wait/Prepare for pouring,4,0,0.0,0.0,0.0
+16,Pour coffee,8,0,0.0,0.0,0.0
+17,Pour milk into coffee,1,0,0.0,0.0,0.0

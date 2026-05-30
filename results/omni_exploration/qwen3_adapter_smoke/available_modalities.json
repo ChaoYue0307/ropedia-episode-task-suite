@@ -1,0 +1,34 @@
+[
+  {
+    "episode_id": "xperience-10m-sample",
+    "modalities": [
+      {
+        "modality": "depth_confidence",
+        "shape": [
+          5821,
+          140
+        ]
+      },
+      {
+        "modality": "caption_text",
+        "shape": [
+          5821,
+          128
+        ],
+        "fields": "objects,interaction"
+      },
+      {
+        "modality": "slam_point_cloud_static",
+        "shape": [
+          22
+        ]
+      },
+      {
+        "modality": "calibration_static",
+        "shape": [
+          117
+        ]
+      }
+    ]
+  }
+]

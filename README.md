@@ -102,6 +102,10 @@ scripts/
   generate_visualizations.py        # refreshes SVG charts + summary JSON
   render_task_suite_infographic.py  # renders the ChatGPT-image-backed PNG
   render_overview_figures.py        # renders polished pipeline/architecture PNGs
+  omni/
+    download_sample_modelscope.py   # mainland-China friendly sample download
+    build_episode_manifest.py       # metadata-only multi-episode scanner
+    qwen3_omni_adapter_smoke.py     # real-data Qwen3-Omni adapter smoke test
 
 results/
   min_action_model/                 # motion-only action baseline artifacts
@@ -109,6 +113,7 @@ results/
   min_all_modalities_action_model/  # current all-feature action artifacts
   min_all_modalities_subtask_model/ # current all-feature subtask artifacts
   episode_task_suite/               # 12-task suite metrics and predictions
+  omni_exploration/                 # H20/ModelScope smoke-test artifacts
 
 docs/
   index.html                        # GitHub Pages dashboard
@@ -175,6 +180,18 @@ hf download ropedia-ai/xperience-10m-sample \
   --local-dir data/sample/xperience-10m-sample
 ```
 
+On mainland-China servers, use ModelScope instead:
+
+```bash
+python scripts/omni/download_sample_modelscope.py \
+  --output-dir data/sample/xperience-10m-sample \
+  --mode minimal
+```
+
+`--mode minimal` downloads `annotation.hdf5`, `README.md`, and
+`fisheye_cam0.mp4`. Use `--mode all-training` to add all six MP4 streams while
+still skipping `visualization.rrd`.
+
 Clone and run this repo:
 
 ```bash
@@ -189,6 +206,56 @@ Run the smaller baselines:
 python scripts/train_min_action_model.py --workspace /path/to/workspace
 python scripts/train_all_modalities_model.py --workspace /path/to/workspace
 ```
+
+## Qwen3-Omni Exploration On H20
+
+This repo now includes a concrete first step toward a Qwen3-Omni fine-tuning
+pipeline. The important separation is:
+
+- direct Qwen3-Omni inputs: RGB/fisheye video, embedded MP4 audio, and language
+  prompts,
+- adapter-required Ropedia inputs: depth, pose/SLAM, hand/body mocap, contacts,
+  and IMU.
+
+The H20 smoke test validates the adapter-required side first, using real
+Ropedia sample data from ModelScope and real action labels. It does not download
+or fine-tune the 30B Qwen3-Omni weights yet.
+
+```bash
+python scripts/omni/build_episode_manifest.py \
+  --data-root /home/cy/Ropedia/modelscope_data \
+  --output outputs/omni_exploration/modelscope_manifest.json
+
+python scripts/omni/qwen3_omni_adapter_smoke.py \
+  --workspace /home/cy/Ropedia/ropedia-episode-task-suite \
+  --episode-root /home/cy/Ropedia/modelscope_data/xperience-10m-sample \
+  --target action \
+  --window-frames 20 \
+  --stride-frames 100 \
+  --max-windows-per-episode 64 \
+  --epochs 2 \
+  --skip-video-features
+```
+
+Verified H20 run:
+
+| Item | Value |
+| --- | ---: |
+| Server | 8 x NVIDIA H20, 96GB each |
+| Free storage checked | about 1.5TB under `/home/cy` |
+| Data source | ModelScope `ropedia-ai/xperience-10m-sample` |
+| Downloaded minimal data | 1.93GB `annotation.hdf5` + 85.7MB `fisheye_cam0.mp4` |
+| Smoke windows | 59 |
+| Split | single-episode chronological |
+| Feature dim | 4,262 |
+| Adapter soft-token blocks | 11 |
+| Qwen3-Omni weights loaded | no |
+| Result | 0.0000 macro-F1, expected for this single-episode chronological smoke split |
+
+The zero score is not treated as a model claim. It is a useful signal that this
+split is not leaking labels across time: the train segment does not cover every
+action that appears in the held-out segment. The next real step is to add more
+episodes and split by held-out episode.
 
 Refresh charts and the website data bundle:
 

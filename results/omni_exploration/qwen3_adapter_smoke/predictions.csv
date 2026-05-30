@@ -1,0 +1,19 @@
+sample_index,episode_id,window_id,true_label,predicted_label,correct
+41,xperience-10m-sample,41,Close bottle cap,Pour liquid from white bottle,0
+42,xperience-10m-sample,42,Close bottle cap,Grasp gooseneck kettle,0
+43,xperience-10m-sample,43,Close bottle cap,Hold gooseneck kettle,0
+44,xperience-10m-sample,44,Place item on table,Grasp gooseneck kettle,0
+45,xperience-10m-sample,45,Place item on table,Pick up kettle,0
+46,xperience-10m-sample,46,Wait/Prepare for pouring,Hold gooseneck kettle,0
+47,xperience-10m-sample,47,Wait/Prepare for pouring,Pick up kettle,0
+48,xperience-10m-sample,48,Wait/Prepare for pouring,Hold gooseneck kettle,0
+49,xperience-10m-sample,49,Wait/Prepare for pouring,Pick up kettle,0
+50,xperience-10m-sample,50,Pour coffee,Grasp coffee scoop,0
+51,xperience-10m-sample,51,Pour coffee,Close bottle cap,0
+52,xperience-10m-sample,52,Pour coffee,Pour liquid from white bottle,0
+53,xperience-10m-sample,53,Pour coffee,Close bottle cap,0
+54,xperience-10m-sample,54,Pour coffee,Grasp coffee scoop,0
+55,xperience-10m-sample,55,Pour coffee,Grasp coffee scoop,0
+56,xperience-10m-sample,56,Pour coffee,Grasp coffee scoop,0
+57,xperience-10m-sample,57,Pour coffee,Grasp coffee scoop,0
+58,xperience-10m-sample,58,Pour milk into coffee,Grasp coffee scoop,0
