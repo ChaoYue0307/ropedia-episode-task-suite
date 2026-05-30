@@ -6,7 +6,7 @@ Script:
 scripts/episode_task_suite.py
 ```
 
-This script turns the single public Ropedia sample episode into many end-to-end tasks. It is designed for learning, debugging, and task design. It is **not** a generalization benchmark because the data is still one episode.
+This script turns the single public Xperience-10M sample episode into many end-to-end tasks. It is designed for learning, debugging, and task design. It is **not** a generalization benchmark because the data is still one episode.
 
 Run:
 

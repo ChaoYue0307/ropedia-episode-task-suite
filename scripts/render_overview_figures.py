@@ -356,7 +356,7 @@ def build_pipeline_html(summary: dict, base_path: Path) -> str:
       <header>
         <div>
           <div class="kicker">verified single-episode pipeline</div>
-          <h1>From Ropedia episode to reproducible artifacts</h1>
+          <h1>From Xperience-10M episode to reproducible artifacts</h1>
           <p class="subtitle">The figure follows the actual code path and separates the full Xperience-10M sample modalities from the current baseline feature manifest.</p>
         </div>
         <div class="metrics">
@@ -694,7 +694,7 @@ def build_architecture_html(summary: dict, base_path: Path) -> str:
       <header>
         <div>
           <div class="kicker">minimal verified model architectures</div>
-          <h1>12 Ropedia episode tasks, four reusable heads</h1>
+          <h1>12 Xperience-10M episode tasks, four reusable heads</h1>
           <p class="subtitle">Each task uses the same aligned episode-window contract, then swaps only the minimal output head needed for labels, forecasting, grounding, reconstruction, or temporal diagnostics.</p>
         </div>
         <div class="summary-pill"><strong>{len(suite['tasks'])}</strong><span>end-to-end tasks</span></div>

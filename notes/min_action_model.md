@@ -1,6 +1,6 @@
 # Minimal Action Model
 
-This is the first modeling baseline for the Ropedia/Xperience sample.
+This is the first modeling baseline for the public Xperience-10M sample released by Ropedia.
 
 The script is:
 

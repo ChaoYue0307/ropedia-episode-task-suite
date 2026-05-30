@@ -2,7 +2,7 @@
   "task": "qwen3_omni_sensor_adapter_smoke_action",
   "base_model_target": "Qwen/Qwen3-Omni-30B-A3B-Thinking",
   "qwen3_loaded": false,
-  "qwen3_note": "This run validates Ropedia sensor-adapter tokens and task heads before loading or LoRA-tuning Qwen3-Omni.",
+  "qwen3_note": "This run validates Xperience-10M sensor-adapter tokens and task heads before loading or LoRA-tuning Qwen3-Omni.",
   "split": "single_episode_chronological",
   "num_episodes": 1,
   "num_windows": 59,

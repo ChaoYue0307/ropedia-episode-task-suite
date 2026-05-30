@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ropedia Episode Task Suite</title>
-  <meta name="description" content="A transparent multimodal task suite for one public Ropedia / Xperience-10M sample episode.">
-  <meta property="og:title" content="Ropedia Episode Task Suite">
+  <title>Xperience-10M Episode Task Suite</title>
+  <meta name="description" content="A transparent multimodal task suite for one public Xperience-10M sample episode released by Ropedia.">
+  <meta property="og:title" content="Xperience-10M Episode Task Suite">
   <meta property="og:description" content="One public embodied-AI episode, converted into reproducible multimodal tasks, baselines, metrics, and diagrams.">
-  <meta property="og:image" content="assets/task_suite_infographic.png?v=bb2beb9">
+  <meta property="og:image" content="assets/task_suite_infographic.png?v=xperience10m">
   <style>
     :root {
       color-scheme: light;
@@ -487,9 +487,9 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <nav class="site-nav">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top" aria-label="Ropedia Episode Task Suite home">
-        <span class="mark" aria-hidden="true">R</span>
-        <span>Ropedia Episode Task Suite</span>
+      <a class="brand" href="#top" aria-label="Xperience-10M Episode Task Suite home">
+        <span class="mark" aria-hidden="true">X</span>
+        <span>Xperience-10M Episode Task Suite</span>
       </a>
       <div class="nav-links" aria-label="Page navigation">
         <a href="#suite">Suite</a>
@@ -509,9 +509,9 @@
     <div class="wrap hero-inner">
       <div>
         <div class="eyebrow">single public episode / verified artifacts</div>
-        <h1>One Ropedia episode, made auditable.</h1>
+        <h1>One Xperience-10M episode, made auditable.</h1>
         <p class="hero-copy">
-          A compact research lab for the public Ropedia / Xperience-10M sample:
+          A compact research lab for the public Xperience-10M sample from Ropedia:
           video, audio, depth, pose, motion capture, inertial sensing, and language annotation,
           with an explicit record of which modalities enter the current minimal feature vector.
         </p>
@@ -547,10 +547,10 @@
     <section id="suite">
       <div class="wrap">
         <div class="section-head">
-          <h2>Ropedia 12-task suite, first.</h2>
+          <h2>Xperience-10M 12-task suite, first.</h2>
           <p>The top-level map shows the Xperience-10M sample modalities and the verified 12-task results. Audio is present in the sample MP4 stream, but the current 8,378-d baseline manifest does not featurize it.</p>
         </div>
-        <img class="task-suite-image" src="assets/task_suite_infographic.png?v=bb2beb9" alt="ChatGPT-image-backed infographic showing all 12 Ropedia episode tasks">
+        <img class="task-suite-image" src="assets/task_suite_infographic.png?v=xperience10m" alt="ChatGPT-image-backed infographic showing all 12 Xperience-10M episode tasks">
       </div>
     </section>
 
@@ -560,11 +560,11 @@
           <h2>From raw episode to checked artifacts.</h2>
           <p>Every script works from one data contract: aligned multimodal windows, explicit labels, cached feature extraction, and a manifest that makes omitted modalities visible.</p>
         </div>
-        <img class="pipeline-image" src="assets/pipeline_diagram.png?v=bb2beb9" alt="Verified Ropedia multimodal pipeline diagram">
+        <img class="pipeline-image" src="assets/pipeline_diagram.png?v=xperience10m" alt="Verified Xperience-10M multimodal pipeline diagram">
         <div class="callout-row">
           <div class="callout">
             <h3>What this project proves</h3>
-            <p>It proves the full engineering loop: reading Ropedia sample data, aligning modalities, converting them into model-ready windows, defining meaningful tasks, producing metrics, and packaging every artifact for review.</p>
+            <p>It proves the full engineering loop: reading Xperience-10M sample data, aligning modalities, converting them into model-ready windows, defining meaningful tasks, producing metrics, and packaging every artifact for review.</p>
           </div>
           <div class="callout">
             <h3>What it does not prove</h3>
@@ -596,7 +596,7 @@
           <h2>The 12 tasks share four head families.</h2>
           <p>The diagram separates the shared episode-window feature pipeline from the task-specific heads, and notes that audio remains dataset context rather than a current baseline feature block.</p>
         </div>
-        <img class="architecture-image" src="assets/task_architectures.png?v=bb2beb9" alt="Verified minimal architecture diagram for all 12 Ropedia episode tasks">
+        <img class="architecture-image" src="assets/task_architectures.png?v=xperience10m" alt="Verified minimal architecture diagram for all 12 Xperience-10M episode tasks">
       </div>
     </section>
 
@@ -667,7 +667,7 @@
           <article class="artifact"><h3>Windows table</h3><p>Window start/end frames and aligned action/subtask labels.</p><a href="https://github.com/ChaoYue0307/ropedia-episode-task-suite/blob/main/results/episode_task_suite/windows.csv">windows.csv</a></article>
           <article class="artifact"><h3>Reproduction scripts</h3><p>Three training scripts plus the dashboard generator.</p><a href="https://github.com/ChaoYue0307/ropedia-episode-task-suite/tree/main/scripts">scripts/</a></article>
           <article class="artifact"><h3>Hugging Face Space</h3><p>The same dashboard packaged as a public static Space.</p><a href="https://huggingface.co/spaces/cy0307/ropedia-episode-task-suite">cy0307/ropedia-episode-task-suite</a></article>
-          <article class="artifact"><h3>Derived HF artifacts</h3><p>Metrics, predictions, docs, and lightweight derived files without raw Ropedia video/data redistribution.</p><a href="https://huggingface.co/datasets/cy0307/ropedia-episode-task-suite-artifacts">dataset repo</a></article>
+          <article class="artifact"><h3>Derived HF artifacts</h3><p>Metrics, predictions, docs, and lightweight derived files without raw Xperience-10M video/data redistribution.</p><a href="https://huggingface.co/datasets/cy0307/ropedia-episode-task-suite-artifacts">dataset repo</a></article>
           <article class="artifact"><h3>HF baseline models</h3><p>Minimal NumPy softmax and ridge baseline weights with model card and architecture diagrams.</p><a href="https://huggingface.co/cy0307/ropedia-minimal-task-baselines">model repo</a></article>
           <article class="artifact"><h3>HF collection</h3><p>Space, artifacts, and model baselines grouped into one public project collection.</p><a href="https://huggingface.co/collections/cy0307/ropedia-episode-task-suite">collection</a></article>
         </div>
@@ -678,7 +678,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Reproduce the suite.</h2>
-          <p>Raw Ropedia data is not redistributed here. Download the public sample separately, then run the same scripts.</p>
+          <p>Raw Xperience-10M data is not redistributed here. Download the public sample separately, then run the same scripts.</p>
         </div>
         <pre class="code-panel"><button type="button" data-copy="setup">Copy</button><code id="setup">git clone https://github.com/Ropedia/HOMIE-toolkit.git
 python3.12 -m venv .venv

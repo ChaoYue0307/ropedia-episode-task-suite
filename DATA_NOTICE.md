@@ -1,6 +1,6 @@
 # Data Notice
 
-This repository does not redistribute raw Ropedia / Xperience-10M data.
+This repository does not redistribute raw Xperience-10M data.
 
 To reproduce the experiments, download the public sample from Hugging Face:
 
@@ -22,4 +22,4 @@ stereo_left.mp4
 stereo_right.mp4
 ```
 
-Use of the dataset is governed by the original Ropedia / Xperience-10M dataset terms.
+Use of the dataset is governed by the original Xperience-10M dataset terms.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-All-modality lightweight baseline for a Ropedia/Xperience episode.
+All-modality lightweight baseline for an Xperience-10M episode.
 
 This intentionally stays small enough for a MacBook:
   - no deep video training

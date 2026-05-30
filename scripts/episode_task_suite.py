@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-End-to-end task suite for one Ropedia/Xperience episode.
+End-to-end task suite for one Xperience-10M episode released by Ropedia.
 
 The purpose is not to prove generalization from one sample episode. It is to
 turn the episode into multiple meaningful supervised/self-supervised learning
@@ -56,7 +56,7 @@ TASKS = [
 def parse_args() -> argparse.Namespace:
     workspace_default = Path(__file__).resolve().parents[1]
     annotation_default = workspace_default / "data/sample/xperience-10m-sample/annotation.hdf5"
-    parser = argparse.ArgumentParser(description="Run an end-to-end task suite on one Ropedia episode.")
+    parser = argparse.ArgumentParser(description="Run an end-to-end task suite on one Xperience-10M episode.")
     parser.add_argument("--workspace", type=Path, default=workspace_default)
     parser.add_argument("--annotation", type=Path, default=annotation_default)
     parser.add_argument("--output-dir", type=Path, default=workspace_default / "outputs/episode_task_suite")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Minimal end-to-end action-recognition pipeline for a Ropedia/Xperience episode.
+Minimal end-to-end action-recognition pipeline for an Xperience-10M episode.
 
 Input:
   annotation.hdf5

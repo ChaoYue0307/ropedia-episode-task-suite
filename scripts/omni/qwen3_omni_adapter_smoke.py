@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Minimum real-data adapter smoke test for a Ropedia -> Qwen3-Omni path.
+"""Minimum real-data adapter smoke test for an Xperience-10M -> Qwen3-Omni path.
 
 This script does not pretend to fine-tune Qwen3-Omni itself. It validates the
-part that Ropedia-specific sensor modalities need before they can be attached
+part that Xperience-10M sensor modalities need before they can be attached
 to an omni backbone: windowing real episodes, turning sensor blocks into
 adapter tokens, and training/evaluating a small task head on real labels.
 """
@@ -38,7 +38,7 @@ ADAPTER_INPUTS = [
 
 def parse_args() -> argparse.Namespace:
     workspace_default = Path(__file__).resolve().parents[2]
-    parser = argparse.ArgumentParser(description="Run a real-data Ropedia sensor-adapter smoke test.")
+    parser = argparse.ArgumentParser(description="Run a real-data Xperience-10M sensor-adapter smoke test.")
     parser.add_argument("--workspace", type=Path, default=workspace_default)
     parser.add_argument(
         "--episode-root",
@@ -427,7 +427,7 @@ def main() -> int:
         "task": f"qwen3_omni_sensor_adapter_smoke_{args.target}",
         "base_model_target": args.base_model_id,
         "qwen3_loaded": False,
-        "qwen3_note": "This run validates Ropedia sensor-adapter tokens and task heads before loading or LoRA-tuning Qwen3-Omni.",
+        "qwen3_note": "This run validates Xperience-10M sensor-adapter tokens and task heads before loading or LoRA-tuning Qwen3-Omni.",
         "split": split_name,
         "num_episodes": len(episodes),
         "num_windows": int(len(labels)),

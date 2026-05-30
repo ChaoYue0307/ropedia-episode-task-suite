@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a lightweight manifest for local Ropedia/Xperience episode folders.
+"""Build a lightweight manifest for local Xperience-10M episode folders.
 
 The manifest is intentionally metadata-only. It lets us decide how many
 episodes fit on the H20 server before downloading or copying large media.
@@ -23,7 +23,7 @@ VIDEO_NAMES = [
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Scan Ropedia/Xperience episode folders.")
+    parser = argparse.ArgumentParser(description="Scan Xperience-10M episode folders.")
     parser.add_argument(
         "--data-root",
         type=Path,

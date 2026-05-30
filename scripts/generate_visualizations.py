@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Generate static SVG visualizations and website data for the Ropedia task suite.
+Generate static SVG visualizations and website data for the Xperience-10M task suite.
 
 No plotting dependencies are required; this uses only the Python standard
 library so the repo stays easy to run.
@@ -117,7 +117,7 @@ def svg_pipeline_diagram(path: Path, summary: dict) -> None:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<rect width="100%" height="100%" fill="#ffffff"/>',
         '<rect x="0" y="0" width="1400" height="760" fill="#ffffff"/>',
-        '<text x="60" y="58" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#10141f">Verified Ropedia Episode Pipeline</text>',
+        '<text x="60" y="58" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#10141f">Verified Xperience-10M Episode Pipeline</text>',
         '<text x="60" y="88" font-family="Arial, sans-serif" font-size="16" fill="#5b6475">Generated from committed scripts and metrics; no conceptual placeholder stages.</text>',
     ]
     arrows = [
@@ -324,7 +324,7 @@ def svg_task_architectures(path: Path, summary: dict) -> None:
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
         '<defs><marker id="arrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#cbd5e1"/></marker></defs>',
         '<rect width="100%" height="100%" fill="#ffffff"/>',
-        '<text x="60" y="56" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#10141f">Minimal Architectures for the 12 Ropedia Episode Tasks</text>',
+        '<text x="60" y="56" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#10141f">Minimal Architectures for the 12 Xperience-10M Episode Tasks</text>',
         '<text x="60" y="88" font-family="Arial, sans-serif" font-size="16" fill="#5b6475">Generated from scripts/episode_task_suite.py semantics and committed summary metrics. These are minimal baselines, not deep foundation models.</text>',
     ]
 

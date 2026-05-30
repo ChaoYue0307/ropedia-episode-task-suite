@@ -3,7 +3,7 @@
 This directory separates the concrete Qwen3-Omni plan into two layers.
 
 1. Native Qwen3-Omni inputs: RGB/fisheye video, embedded audio, and text prompts.
-2. Ropedia-specific adapter inputs: depth, pose/SLAM, mocap, contacts, and IMU.
+2. Xperience-10M sensor adapter inputs: depth, pose/SLAM, mocap, contacts, and IMU.
 
 `qwen3_omni_adapter_smoke.py` validates the second layer first using real
 episode windows and real labels. It does not fabricate Qwen outputs and does not

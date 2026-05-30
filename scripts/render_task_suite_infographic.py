@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Render a polished 12-task Ropedia episode-suite infographic.
+Render a polished 12-task Xperience-10M episode-suite infographic.
 
 The task names, inputs, and metrics are read from
 results/episode_task_suite/summary_report.json. The output is a deterministic
@@ -550,7 +550,7 @@ def build_html(summary: dict, base_image: Path | None, sample_dir: Path | None) 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width={CANVAS_WIDTH}, initial-scale=1">
-  <title>Ropedia 12-Task Episode Suite Infographic</title>
+  <title>Xperience-10M 12-Task Episode Suite Infographic</title>
   <style>
     * {{ box-sizing: border-box; }}
     html,
@@ -897,13 +897,13 @@ def build_html(summary: dict, base_image: Path | None, sample_dir: Path | None) 
   </style>
 </head>
 <body>
-  <main class="canvas" aria-label="Ropedia 12-task episode suite infographic">
+  <main class="canvas" aria-label="Xperience-10M 12-task episode suite infographic">
     {base_layer}
     <div class="content">
     <header class="header">
       <div>
         <div class="kicker">verified single-episode task suite</div>
-        <h1>Ropedia 12-task episode suite</h1>
+        <h1>Xperience-10M 12-task episode suite</h1>
         <p class="subtitle">A clean map from synchronized multimodal windows to 12 auditable task heads, with metrics loaded from the committed summary report.</p>
       </div>
       <div class="stats">{stats_html}</div>

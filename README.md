@@ -1,12 +1,12 @@
-# Ropedia Episode Task Suite
+# Xperience-10M Episode Task Suite
 
 [![Website](https://img.shields.io/badge/site-GitHub%20Pages-1f63e9)](https://chaoyue0307.github.io/ropedia-episode-task-suite/)
 [![HF Space](https://img.shields.io/badge/Hugging%20Face-Space-ffb000)](https://huggingface.co/spaces/cy0307/ropedia-episode-task-suite)
-[![Dataset](https://img.shields.io/badge/dataset-Ropedia%20%2F%20Xperience--10M-008b9a)](https://github.com/Ropedia)
+[![Dataset](https://img.shields.io/badge/dataset-Xperience--10M%20by%20Ropedia-008b9a)](https://github.com/Ropedia)
 [![Scope](https://img.shields.io/badge/scope-single%20public%20sample-b65b04)](#scope)
 
-An audit-first embodied-AI learning repo built around one public Ropedia /
-Xperience-10M sample episode.
+An audit-first embodied-AI learning repo built around one public
+Xperience-10M sample episode released by Ropedia.
 
 The project does one narrow thing carefully: it turns a raw multimodal episode
 into:
@@ -58,7 +58,7 @@ Hugging Face Space app:
 | Derived artifacts on Hugging Face | https://huggingface.co/datasets/cy0307/ropedia-episode-task-suite-artifacts |
 | Minimal baseline models on Hugging Face | https://huggingface.co/cy0307/ropedia-minimal-task-baselines |
 | Hugging Face collection | https://huggingface.co/collections/cy0307/ropedia-episode-task-suite |
-| Ropedia website | https://ropedia.com/dataset |
+| Xperience-10M dataset website | https://ropedia.com/dataset |
 | Xperience-10M release page | https://ropedia.com/blog/20260316_xperience_10m |
 | Ropedia GitHub organization | https://github.com/Ropedia |
 | HOMIE Toolkit | https://github.com/Ropedia/HOMIE-toolkit |
@@ -66,7 +66,7 @@ Hugging Face Space app:
 | Xperience-10M sample on Hugging Face | https://huggingface.co/datasets/ropedia-ai/xperience-10m-sample |
 | Ropedia Hugging Face organization | https://huggingface.co/ropedia-ai |
 
-![ChatGPT-image-backed 12-task infographic](docs/assets/task_suite_infographic.png?v=bb2beb9)
+![ChatGPT-image-backed Xperience-10M 12-task infographic](docs/assets/task_suite_infographic.png?v=xperience10m)
 
 The infographic uses a ChatGPT-image-generated text-free research background and
 low-resolution modality thumbnails extracted from the public sample episode. The
@@ -76,9 +76,9 @@ with [`scripts/render_task_suite_infographic.py`](scripts/render_task_suite_info
 so the published PNG is a presentation graphic with verified labels and metrics,
 not a hallucinated metric sheet.
 
-![Verified Pipeline](docs/assets/pipeline_diagram.png?v=bb2beb9)
+![Verified Pipeline](docs/assets/pipeline_diagram.png?v=xperience10m)
 
-![Minimal 12-task model architectures](docs/assets/task_architectures.png?v=bb2beb9)
+![Minimal 12-task model architectures](docs/assets/task_architectures.png?v=xperience10m)
 
 The pipeline and architecture figures use the same pattern: ChatGPT-image
 provides text-free visual backgrounds, while
@@ -105,6 +105,7 @@ scripts/
   omni/
     download_sample_modelscope.py   # mainland-China friendly sample download
     build_episode_manifest.py       # metadata-only multi-episode scanner
+    plan_finetune_sample_budget.py  # H20 storage/sample-count planner
     qwen3_omni_adapter_smoke.py     # real-data Qwen3-Omni adapter smoke test
 
 results/
@@ -129,12 +130,13 @@ notes/
   episode_task_suite.md
 ```
 
-Raw Ropedia data is **not** committed. Download it from the original source and
-follow the dataset terms.
+Raw Xperience-10M data is **not** committed. Download it from the official
+Ropedia distribution and follow the dataset terms.
 
 ## Data Expected
 
-The scripts expect a workspace with the Ropedia toolkit and the sample episode:
+The scripts expect a workspace with the Ropedia HOMIE toolkit and the
+Xperience-10M sample episode:
 
 ```text
 <workspace>/
@@ -207,19 +209,19 @@ python scripts/train_min_action_model.py --workspace /path/to/workspace
 python scripts/train_all_modalities_model.py --workspace /path/to/workspace
 ```
 
-## Qwen3-Omni Exploration On H20
+## Xperience-10M Fine-Tuning Exploration On H20
 
 This repo now includes a concrete first step toward a Qwen3-Omni fine-tuning
-pipeline. The important separation is:
+pipeline over Xperience-10M. The important separation is:
 
 - direct Qwen3-Omni inputs: RGB/fisheye video, embedded MP4 audio, and language
   prompts,
-- adapter-required Ropedia inputs: depth, pose/SLAM, hand/body mocap, contacts,
-  and IMU.
+- adapter-required Xperience-10M sensor inputs: depth, pose/SLAM, hand/body
+  mocap, contacts, and IMU.
 
 The H20 smoke test validates the adapter-required side first, using real
-Ropedia sample data from ModelScope and real action labels. It does not download
-or fine-tune the 30B Qwen3-Omni weights yet.
+Xperience-10M sample data from ModelScope and real action labels. It does not
+download or fine-tune the 30B Qwen3-Omni weights yet.
 
 ```bash
 python scripts/omni/build_episode_manifest.py \
@@ -256,6 +258,36 @@ The zero score is not treated as a model claim. It is a useful signal that this
 split is not leaking labels across time: the train segment does not cover every
 action that appears in the held-out segment. The next real step is to add more
 episodes and split by held-out episode.
+
+### Sample Count Decision
+
+The local Mac sample is only one episode. For H20 fine-tuning, decide sample
+count by storage and evaluation design, not by the local folder. The current H20
+has about 1.5TB free under `/home/cy`; after reserving space for model weights,
+checkpoints, caches, and logs, a realistic first budget is:
+
+| Phase | Episodes/samples | Approx windows at stride 5 | Purpose |
+| --- | ---: | ---: | --- |
+| Smoke | 1-3 | 1k-3k | Verify loaders, token alignment, and task heads |
+| Pilot | 16-32 | 18k-37k | First held-out-episode evaluation |
+| Useful LoRA run | 64-128 | 74k-149k | Train sensor adapters plus selected Qwen3-Omni LoRA |
+| Storage-heavy run | 256+ | 297k+ | Only after download layout and checkpoint size are stable |
+
+For the next run, use **32 episodes** if ModelScope exposes enough files
+cleanly. If download structure is simple and disk remains above 800GB free,
+scale to **64 or 128 episodes**. Do not aim for 10k samples first; at the
+observed sample-equivalent size, that would become a data-management project
+before it is a modeling experiment.
+
+Use the budget helper before downloading:
+
+```bash
+python scripts/omni/plan_finetune_sample_budget.py \
+  --storage-root /home/cy \
+  --target-free-after-download-gb 800 \
+  --all-training-per-episode-gb 2.4 \
+  --full-preview-per-episode-gb 5.1
+```
 
 Refresh charts and the website data bundle:
 
@@ -364,7 +396,7 @@ The exact feature block boundaries are stored in
 
 ## Data Notice
 
-Ropedia / Xperience-10M data belongs to its original authors and is subject to
-the dataset's original license and access terms. This repo contains code and
+Xperience-10M data belongs to its original authors and is subject to the
+official Ropedia dataset license and access terms. This repo contains code and
 derived experiment artifacts only; it does not redistribute the raw videos or
 raw annotation dataset.
